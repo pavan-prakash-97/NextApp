@@ -203,7 +203,7 @@ export default function UpdateProfileForm() {
       if (image !== undefined && image !== "") payload.image = image;
 
       const res = await userApi.updateProfile(payload);
-      console.log("updateProfile response", res);
+      console.log("update Profile response", res);
       setMessage("Profile updated successfully.");
       // clear any existing timeout
       if (messageTimeoutRef.current) {
