@@ -59,8 +59,8 @@ export async function sendEmail({ to, subject, html, text }: SendEmailOptions) {
 
 export async function sendProfileUpdateEmail(
   userEmail: string,
-  userName: string,
-  updatedFields: string[]
+  userName: string
+  // updatedFields?: string[]
 ) {
   const subject = "Profile Updated Successfully";
   const html = `

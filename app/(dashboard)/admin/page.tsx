@@ -1,4 +1,5 @@
 import RoleGuard from "@/app/components/feature/auth/RoleGuard";
+import UpdateProfileForm from "@/app/components/feature/auth/UpdateProfileForm";
 
 export default function AdminDashboard() {
   return (
@@ -8,6 +9,10 @@ export default function AdminDashboard() {
         <p className="text-[#F4F4F4]">
           Welcome, Admin! Here are your analytics and tools.
         </p>
+
+        <div className="mt-8">
+          <UpdateProfileForm />
+        </div>
       </div>
     </RoleGuard>
   );

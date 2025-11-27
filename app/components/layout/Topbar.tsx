@@ -30,7 +30,7 @@ export default function Topbar() {
   }, []);
 
   return (
-    <header className="w-full h-16 border-b shadow-sm flex items-center justify-between px-6">
+    <header className="w-full h-16 border-b shadow-sm flex items-center justify-between px-6 bg-gray-800">
       <h1 className="text-2xl font-semibold">Next App</h1>
 
       <div className="relative flex items-center gap-4" ref={dropdownRef}>
@@ -74,10 +74,7 @@ export default function Topbar() {
 
         {/* Dropdown */}
         {open && (
-          <div
-            className="absolute right-0 top-14 w-44 bg-white border rounded-lg shadow-lg py-2 animate-dropdown"
-          >
-            
+          <div className="absolute right-0 top-14 w-44 bg-white border rounded-lg shadow-lg py-2 animate-dropdown">
             <button
               onClick={handleSignOut}
               className="block w-full text-left px-4 py-2 text-red-600 hover:bg-red-50"

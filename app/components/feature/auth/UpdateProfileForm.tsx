@@ -18,6 +18,7 @@ export default function UpdateProfileForm() {
   // read-only fields from Prisma User model
   const [id, setId] = useState<string | null>(null);
   const [email, setEmail] = useState<string | null>(null);
+  const [role, setRole] = useState<string | null>(null);
 
   const [createdAt, setCreatedAt] = useState<string | null>(null);
   const [updatedAt, setUpdatedAt] = useState<string | null>(null);
@@ -33,7 +34,6 @@ export default function UpdateProfileForm() {
   const [zoom, setZoom] = useState<number>(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
   const [outputSize, setOutputSize] = useState<number>(512); // px square output
-  const [previewDataUrl, setPreviewDataUrl] = useState<string | null>(null);
   const [processing, setProcessing] = useState<boolean>(false);
   const [showCropModal, setShowCropModal] = useState<boolean>(false);
   const origImageRef = useRef<HTMLImageElement | null>(null);
@@ -48,7 +48,6 @@ export default function UpdateProfileForm() {
     setOrigFile(file);
     setOrigUrl(url);
     // reset preview / crop settings and open modal
-    setPreviewDataUrl(null);
     setProcessing(false);
     setShowCropModal(true);
   };
@@ -127,7 +126,6 @@ export default function UpdateProfileForm() {
       if (origUrl) URL.revokeObjectURL(origUrl);
       setOrigUrl(null);
       setOrigFile(null);
-      setPreviewDataUrl(null);
       setShowCropModal(false);
     } catch (err) {
       console.error("Apply crop failed", err);
@@ -141,7 +139,6 @@ export default function UpdateProfileForm() {
     if (origUrl) URL.revokeObjectURL(origUrl);
     setOrigUrl(null);
     setOrigFile(null);
-    setPreviewDataUrl(null);
     setShowCropModal(false);
   };
 
@@ -154,6 +151,7 @@ export default function UpdateProfileForm() {
         const data = await userApi.getProfile();
         // API returns { user: { ... } }
         const user = data?.user ?? data;
+        console.log("user>>>>", user);
         if (!mounted) return;
         const fullName = user?.name ?? "";
         const parts = fullName.trim() ? fullName.trim().split(/\s+/) : [];
@@ -162,6 +160,7 @@ export default function UpdateProfileForm() {
         setFirstName(first);
         setLastName(last);
         setImage(user?.image || "");
+        setRole(user?.role || null);
 
         // Populate read-only fields when available
         setId(user?.id ?? null);
@@ -260,53 +259,60 @@ export default function UpdateProfileForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Top: avatar + read-only metadata */}
           <div className="flex items-center gap-6">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className={`flex-shrink-0 cursor-pointer transition-all duration-200 ${
-                dragOver ? "ring-4 ring-indigo-300 rounded-full shadow-lg" : ""
-              }`}
-              onDrop={onDrop}
-              onDragOver={onDragOver}
-              onDragLeave={onDragLeave}
-              onClick={() => fileInputRef.current?.click()}
-              role="button"
-              tabIndex={0}
-            >
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                onChange={onFileChange}
-                className="hidden"
-              />
-              {image ? (
-                <img
-                  src={image}
-                  alt="Avatar"
-                  className="h-24 w-24 rounded-full object-cover border border-gray-200"
+            <div className="flex flex-col gap-2">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className={`flex-shrink-0 cursor-pointer transition-all duration-200 ${
+                  dragOver
+                    ? "ring-4 ring-indigo-300 rounded-full shadow-lg"
+                    : ""
+                }`}
+                onDrop={onDrop}
+                onDragOver={onDragOver}
+                onDragLeave={onDragLeave}
+                onClick={() => fileInputRef.current?.click()}
+                role="button"
+                tabIndex={0}
+              >
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={onFileChange}
+                  className="hidden"
                 />
-              ) : (
-                <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center border border-gray-200">
-                  {/* simple user SVG icon */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-gray-400"
-                  >
-                    <path d="M20 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M4 21v-2a4 4 0 0 1 3-3.87"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
-                </div>
-              )}
-            </motion.div>
+                {image ? (
+                  <img
+                    src={image}
+                    alt="Avatar"
+                    className="h-24 w-24 rounded-full object-cover border border-gray-200"
+                  />
+                ) : (
+                  <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center border border-gray-200">
+                    {/* simple user SVG icon */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-gray-400"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M4 21v-2a4 4 0 0 1 3-3.87"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </div>
+                )}
+              </motion.div>
+              <div className="text-center text-xs">
+                {role?.toLocaleUpperCase()}
+              </div>
+            </div>
 
             <div className="grid grid-cols-1 gap-3 w-full">
               <div>
