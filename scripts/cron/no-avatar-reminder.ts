@@ -30,22 +30,17 @@ async function saveDB(db: ReminderDB) {
 async function findAndNotify() {
   try {
     const now = new Date();
-    
+
     const db = await loadDB();
 
     // Find users with no image (null or empty) and updatedAt < cutoff (i.e., older than X hours)
     const users = await prisma.user.findMany({
       where: {
-        AND: [
-          { OR: [{ image: null }, { image: "" }] },
-        ],
+        AND: [{ OR: [{ image: null }, { image: "" }] }],
       },
       select: { id: true, name: true, email: true, updatedAt: true },
     });
 
-    console.log('users>>>',users)
-  
-  
     if (!users.length) {
       logInfo("No matching users found to remind");
       return;
@@ -56,7 +51,9 @@ async function findAndNotify() {
       const lastSentIso = db[user.id];
       if (lastSentIso) {
         const lastSent = new Date(lastSentIso);
-        const nextAllowed = new Date(lastSent.getTime() + HOURS_BETWEEN_REMINDERS * 60 * 60 * 1000);
+        const nextAllowed = new Date(
+          lastSent.getTime() + HOURS_BETWEEN_REMINDERS * 60 * 60 * 1000
+        );
         if (nextAllowed > now) {
           // Not yet allowed to send again
           continue;
@@ -64,7 +61,7 @@ async function findAndNotify() {
       }
 
       const appUrl = process.env.APP_URL ?? "http://localhost:3000";
-     const html = `
+      const html = `
   <!DOCTYPE html>
   <html>
     <head>
@@ -116,8 +113,9 @@ async function findAndNotify() {
   </html>
 `;
 
-
-      const text = `Hi ${user.name ?? "User"},\n\nWe noticed that you haven't added a profile picture yet. Add one to personalize your account: ${appUrl}/user\n\nThanks,\nYour App Team`;
+      const text = `Hi ${
+        user.name ?? "User"
+      },\n\nWe noticed that you haven't added a profile picture yet. Add one to personalize your account: ${appUrl}/user\n\nThanks,\nYour App Team`;
 
       const result = await sendEmail({
         to: user.email,
@@ -129,7 +127,10 @@ async function findAndNotify() {
       if (result.success) {
         db[user.id] = new Date().toISOString();
         await saveDB(db);
-        logInfo("Sent profile reminder", { userId: user.id, email: user.email });
+        logInfo("Sent profile reminder", {
+          userId: user.id,
+          email: user.email,
+        });
       } else {
         logError(new Error(`Failed to send reminder to ${user.email}`));
       }
