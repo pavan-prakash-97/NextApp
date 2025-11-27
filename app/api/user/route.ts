@@ -73,8 +73,8 @@ export async function PATCH(req: NextRequest) {
     try {
       await sendProfileUpdateEmail(
         updatedUser.email!,
-        updatedUser.name || "User",
-        Object.keys(data)
+        updatedUser.name || "User"
+        // Object.keys(data)
       );
       logInfo("Profile update email sent", { userId: session.user.id });
     } catch (emailError) {

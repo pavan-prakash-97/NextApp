@@ -229,3 +229,676 @@
 {"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 17:58:43","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
 {"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 17:58:43","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
 {"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 17:58:43","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 18:15:50","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 18:15:50","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:15:51","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:15:51","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 18:15:52"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 18:17:51","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 18:17:52","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 18:17:52","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:17:52","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:17:52","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 18:34:10","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 18:34:10","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:34:10","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:34:10","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin\n","timestamp":"2025-11-27 18:34:41","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin\n","timestamp":"2025-11-27 18:34:41","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin\n","timestamp":"2025-11-27 18:35:06","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin\n","timestamp":"2025-11-27 18:35:06","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin\n","timestamp":"2025-11-27 18:35:06","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin\n","timestamp":"2025-11-27 18:35:06","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin\n","timestamp":"2025-11-27 18:35:06","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:37:13","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:37:13","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:37:14","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:37:14","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:37:14","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:37:19","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:37:19","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:37:22","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:37:22","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:37:22","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:37:22","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:37:47","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:37:47","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:37:52","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:37:52","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:37:52","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:37:52","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:38:27","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:38:27","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:38:27","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:38:27","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:38:29","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:38:29","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:38:29","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:38:29","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:38:30","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:38:31","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:38:31","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:38:31","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:38:31","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:38:32","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:38:32","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:38:32","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:40:22","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:40:22","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:40:22","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:40:22","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:40:24","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:40:24","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:40:24","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:40:25","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:40:25","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:40:25","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:40:25","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:40:25","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:43:30","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:43:30","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:43:30","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:43:30","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:44:11","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:44:46","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:45:21","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:45:21","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:45:21","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 18:45:21","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:49:06","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:49:06","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:59:37","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 18:59:37","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:08:12","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:08:13","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:08:13","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:08:13","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:08:13","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:08:28","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:08:29","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:08:29","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:08:29","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:09:51","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:09:52","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:09:52","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:09:52","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:09:52","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:16:56","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:16:56","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:05","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:05","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:05","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:05","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:07","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:07","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:09","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:09","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:10","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:10","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:11","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:11","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:11","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:11","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:13","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:13","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:13","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:13","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:14","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:14","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:14","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:14","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:15","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:15","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:15","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:15","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:17","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:17","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:17","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:17","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:18","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:18","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:18","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:18","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:20","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:20","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:20","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:20","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:21","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:21","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:21","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:21","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:23","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:24","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:24","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:24","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:41","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:17:41","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:41","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:17:41","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:18:56","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:18:56","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:18:56","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:18:56","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:19:04","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:19:04","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:19:04","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:19:04","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:22:09","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:22:09","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:22:09","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:22:09","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:22:23","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:22:23","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:22:23","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:22:23","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:32:49","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:32:49","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:32:50","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:32:50","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 19:32:51"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:35:23","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:35:23","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:52:28","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:52:28","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:52:30","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 19:52:30","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:52:30","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:52:30","userId":"dg4s6ZQljkcfjjHIfBfmQI1I11OW36A9"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:53:43","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:53:44","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:53:44","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:53:44","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:53:44","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:55:07","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:55:07","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:55:07","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:55:07","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:55:07","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:55:07","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 19:55:09"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:55:12","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:55:12","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:55:12","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:55:12","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:55:12","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:55:12","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:55:26","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:55:27","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:57:28","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:57:36","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:57:36","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:57:36","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:57:36","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:59:57","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:59:59","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 19:59:59","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:59:59","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 19:59:59","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:00:04","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:00:04","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:00:04","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:00:04","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:06:08","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:06:08","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:06:26","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:06:26","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:06:26","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:06:26","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:06:28","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:06:28","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:06:28","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:06:29","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:06:29","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:06:29","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:06:29","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:06:30","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:06:30","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:06:30","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:06:30","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:14:30","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:14:30","userId":"PA0U4tUmJt5HDgjtOalbM0qdSmd7iu9I"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:16:51","userId":"jPcBErHG0wLEMJSvyWz2ezV9jWp8IOej"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:16:51","userId":"jPcBErHG0wLEMJSvyWz2ezV9jWp8IOej"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:16:52","userId":"jPcBErHG0wLEMJSvyWz2ezV9jWp8IOej"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:16:52","userId":"jPcBErHG0wLEMJSvyWz2ezV9jWp8IOej"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 20:16:53"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:35:03","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:35:03","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:35:03","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:35:03","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:35:03","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:35:03","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 20:35:05"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:35:13","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:35:13","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:35:13","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:35:13","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:37:32","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:37:32","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:37:32","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:37:32","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:37:35","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:37:35","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:37:35","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:37:35","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:37:40","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:37:40","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User role retrieved","role":"admin","timestamp":"2025-11-27 20:37:40","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:37:40","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:38:16","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:38:16","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:38:16","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:38:16","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:38:24","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:38:24","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:38:24","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:38:24","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:38:27","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:38:27","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:38:27","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:38:27","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:38:27","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:38:27","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile updated successfully","timestamp":"2025-11-27 20:38:58","updatedFields":["name"],"userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"Email sent successfully","messageId":"<9bc2ba60-06d3-3249-ac5d-b519d8523300@nextapp.com>","subject":"Profile Updated Successfully","timestamp":"2025-11-27 20:39:01","to":"pavanwm007@gmail.com"}
+{"level":"info","message":"Profile update email sent","timestamp":"2025-11-27 20:39:01","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"Cron scheduled with expression: */1 * * * *","timestamp":"2025-11-27 20:51:32"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:51:33"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 20:51:34"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:52:00"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:52:01"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:52:45","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:52:45","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:52:49","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 20:52:49","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:52:49","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 20:52:49","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:53:00"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:53:00"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:54:00"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:54:00"}
+{"level":"info","message":"Cron scheduled with expression: */1 * * * *","timestamp":"2025-11-27 20:55:01"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:55:01"}
+{"level":"info","message":"Cron scheduled with expression: * * * * * *","timestamp":"2025-11-27 20:56:50"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:56:50"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:56:51"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:56:51"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 20:56:52"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:56:52"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:56:52"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:56:53"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:56:53"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:56:54"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:56:54"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:56:55"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:56:55"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:56:56"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:56:56"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:56:57"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:56:57"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:56:58"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:56:58"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:56:59"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:56:59"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:00"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:00"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:01"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:01"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:02"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:02"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:03"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:03"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:04"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:04"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:05"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:05"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:06"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:06"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:07"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:07"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:08"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:08"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:09"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:09"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:10"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:10"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:11"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:11"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:12"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:12"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:13"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:13"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:14"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:14"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:15"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:15"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:16"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:16"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:17"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:17"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:18"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:18"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:19"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:19"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:20"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:20"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:21"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:21"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:22"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:22"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:23"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:23"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:24"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:24"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:25"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:25"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:26"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:26"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:27"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:27"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:28"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:28"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:29"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:29"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:30"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:30"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:31"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:31"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:32"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:32"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:33"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:33"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:34"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:34"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:35"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:35"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:36"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:36"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:37"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:37"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:38"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:38"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:39"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:39"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:40"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:40"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:41"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:41"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:42"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:42"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:43"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:43"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:44"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:44"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:45"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:45"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:46"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:47"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:47"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:47"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:48"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:48"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:49"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:49"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:50"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:50"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:51"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:51"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:52"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:52"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:53"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:53"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:54"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:54"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:55"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:55"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:56"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:56"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:57"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:57"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:58"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:57:59"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:57:59"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:00"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:00"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:01"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:01"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:02"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:02"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:03"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:03"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:04"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:04"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:05"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:06"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:06"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:07"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:07"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:08"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:08"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:09"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:09"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:10"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:10"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:11"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:11"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:12"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:12"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:13"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:13"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:14"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:14"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:15"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:15"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:16"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:16"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:17"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:17"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:18"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:18"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:19"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:19"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:20"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:20"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:21"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:21"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:22"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:22"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:23"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:23"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:24"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:24"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:25"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:25"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:26"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:26"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:27"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:27"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:28"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:28"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:29"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:29"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:30"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:30"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:31"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:31"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:32"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:32"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:33"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:33"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:34"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:34"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:35"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:35"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:36"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:36"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:37"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:37"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:38"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:38"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:39"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:39"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:40"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:40"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:41"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:41"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:42"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:42"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:43"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:43"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:44"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:44"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:45"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:45"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:46"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:46"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:47"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:47"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:48"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:48"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:49"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:49"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:50"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:50"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:51"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:51"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:52"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:52"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:53"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:53"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:58:54"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:54"}
+{"level":"info","message":"Cron scheduled with expression: */10 * * * * *","timestamp":"2025-11-27 20:58:56"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:58:56"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 20:58:57"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:59:00"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:59:00"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:59:10"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:59:10"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:59:20"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:59:20"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:59:30"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:59:30"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:59:40"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:59:40"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 20:59:50"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 20:59:50"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:00:00"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 21:00:00"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:00:10"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 21:00:10"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:00:20"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 21:00:20"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:00:30"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 21:00:30"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:00:40"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 21:00:40"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:00:50"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 21:00:50"}
+{"level":"info","message":"Cron scheduled with expression: */10 * * * * *","timestamp":"2025-11-27 21:00:56"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 21:00:59"}
+{"level":"info","message":"Email sent successfully","messageId":"<b9de9ba9-a042-5d7e-1236-5600d9d909f7@nextapp.com>","subject":"Please add your profile picture","timestamp":"2025-11-27 21:01:00","to":"pavanwm007+1@gmail.com"}
+{"email":"pavanwm007+1@gmail.com","level":"info","message":"Sent profile reminder","timestamp":"2025-11-27 21:01:00","userId":"0fP3pEiBoVHkkOf3m8BcRy8KCq6F4omB"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:01:00"}
+{"level":"info","message":"Email sent successfully","messageId":"<1153021c-8ee7-47d5-b14b-848b5598b43a@nextapp.com>","subject":"Please add your profile picture","timestamp":"2025-11-27 21:01:03","to":"pavanwm007@gmail.com"}
+{"email":"pavanwm007@gmail.com","level":"info","message":"Sent profile reminder","timestamp":"2025-11-27 21:01:03","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"Email sent successfully","messageId":"<4025aafb-d4f0-4fc3-235f-019a6a57411e@nextapp.com>","subject":"Please add your profile picture","timestamp":"2025-11-27 21:01:03","to":"pavanwm007@gmail.com"}
+{"email":"pavanwm007@gmail.com","level":"info","message":"Sent profile reminder","timestamp":"2025-11-27 21:01:03","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:01:10"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:01:20"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:01:30"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:01:40"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:01:50"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:02:00"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:02:10"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:02:20"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:02:30"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:02:40"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:02:50"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:03:00"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:03:10"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:03:20"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:03:30"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:03:40"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:03:50"}
+{"level":"info","message":"Cron scheduled with expression: */10 * * * * *","timestamp":"2025-11-27 21:04:10"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 21:04:12"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:04:20"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:04:30"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:04:40"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:04:50"}
+{"level":"info","message":"Cron scheduled with expression: */10 * * * * *","timestamp":"2025-11-27 21:05:58"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 21:06:00"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:06:00"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:06:10"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:06:20"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:06:30"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:06:40"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:06:50"}
+{"level":"info","message":"Cron scheduled with expression: * */1 * * * *","timestamp":"2025-11-27 21:07:26"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:27"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 21:07:27"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:28"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:29"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:30"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:31"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:32"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:33"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:34"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:35"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:36"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:37"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:38"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:39"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:40"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:41"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:42"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:43"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:44"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:45"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:46"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:47"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:48"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:49"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:50"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:51"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:52"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:53"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:54"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:07:55"}
+{"level":"info","message":"Cron scheduled with expression: * */1 * * * *","timestamp":"2025-11-27 21:11:56"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:11:57"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 21:11:57"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:11:58"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:11:59"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:12:00"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:12:01"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:12:02"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:12:03"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 21:19:34","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 21:19:34","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"Cron scheduled with expression: * */1 * * * *","timestamp":"2025-11-27 21:19:40"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:19:41"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 21:19:41"}
+{"level":"info","message":"Cron (no-avatar-reminder) triggered","timestamp":"2025-11-27 21:19:42"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 21:25:43","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 21:25:43","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 21:25:46","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 21:25:46","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 21:25:47","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 21:25:47","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 21:25:49"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 21:25:50","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 21:25:50","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 21:25:50","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User profile retrieved","timestamp":"2025-11-27 21:25:50","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"Cron scheduled with expression: 0 */24 * * *","timestamp":"2025-11-27 21:26:23"}
+{"level":"info","message":"No matching users found to remind","timestamp":"2025-11-27 21:26:23"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 21:26:25"}
+{"level":"info","message":"User profile updated successfully","timestamp":"2025-11-27 21:26:47","updatedFields":["name"],"userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"Email sent successfully","messageId":"<767319f8-53b0-bf58-062b-43f3d2e9fcd8@nextapp.com>","subject":"Profile Updated Successfully","timestamp":"2025-11-27 21:26:50","to":"pavanwm007@gmail.com"}
+{"level":"info","message":"Profile update email sent","timestamp":"2025-11-27 21:26:50","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"Cron scheduled with expression: 0 */24 * * *","timestamp":"2025-11-27 21:28:05"}
+{"level":"info","message":"Email transporter is ready","timestamp":"2025-11-27 21:28:06"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 21:31:41","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
+{"level":"info","message":"User role retrieved","role":"user","timestamp":"2025-11-27 21:31:41","userId":"kFW2p3Z7Ude38GhrBpj69sLLcUY7W3ub"}
