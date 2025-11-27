@@ -31,9 +31,6 @@ export async function middleware(req: NextRequest) {
 
   const sessionToken = req.cookies.get("better-auth.session_token")?.value;
 
-  console.log("Session Token >>>", sessionToken);
-  console.log("PATH >>>", pathname);
-
   const protectedRoutes = ["/admin", "/user", "/dashboard"];
 
   if (sessionToken && (pathname === "/login" || pathname === "/register")) {

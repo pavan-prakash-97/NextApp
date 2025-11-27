@@ -151,7 +151,7 @@ export default function UpdateProfileForm() {
         const data = await userApi.getProfile();
         // API returns { user: { ... } }
         const user = data?.user ?? data;
-        console.log("user>>>>", user);
+
         if (!mounted) return;
         const fullName = user?.name ?? "";
         const parts = fullName.trim() ? fullName.trim().split(/\s+/) : [];
