@@ -33,6 +33,10 @@ export const auth = betterAuth({
         required: false,
         defaultValue: "user",
       },
+      mobileNumber: {
+        type: "string",
+        required: true,
+      },
     },
   },
 });

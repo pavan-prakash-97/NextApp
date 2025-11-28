@@ -1,7 +1,7 @@
 import axiosInstance from "./axios";
 import { AxiosRequestConfig } from "axios";
 
-// User API endpoints
+
 export const userApi = {
   // Get current user profile
   getProfile: async () => {
@@ -10,7 +10,7 @@ export const userApi = {
   },
 
   // Update user profile
-  updateProfile: async (data: { name?: string; image?: string }) => {
+  updateProfile: async (data: { name?: string; image?: string; mobileNumber?: string }) => {
     const response = await axiosInstance.patch("/api/user", data);
     return response.data;
   },

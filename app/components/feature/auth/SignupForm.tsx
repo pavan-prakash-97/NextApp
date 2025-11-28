@@ -9,10 +9,36 @@ export default function SignupForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+
+  type SignUpPayload = {
+    email: string;
+    password: string;
+    name: string;
+    mobileNumber?: string;
+    callbackURL?: string;
+  };
+
+  function normalizeMobile(num: string) {
+    const cleaned = num.replace(/\D/g, ""); // keep only digits
+
+    // If user already typed +91XXXXXXXXXX or 91XXXXXXXXXX
+    if (cleaned.startsWith("91")) {
+      return "+".concat(cleaned);
+    }
+
+    // If user typed 10 digits → assume Indian number
+    if (cleaned.length === 10) {
+      return "91".concat(cleaned);
+    }
+
+    // Fallback (still enforce +91)
+    return "91".concat(cleaned);
+  }
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,13 +49,28 @@ export default function SignupForm() {
         email,
         password,
         name,
+        mobileNumber,
         callbackURL: "/user",
-      });
+      } as SignUpPayload);
 
       if (error) {
         alert(error.message || "Signup failed");
         setLoading(false);
         return;
+      }
+
+      // Send welcome SMS after successful signup (non-blocking)
+      try {
+        await fetch("/api/send-sms", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            to: normalizeMobile(mobileNumber),
+            text: `Welcome ${name || "user"} to Next App!`,
+          }),
+        });
+      } catch (smsErr) {
+        console.warn("Failed to send welcome SMS:", smsErr);
       }
 
       router.push("/user");
@@ -84,6 +125,31 @@ export default function SignupForm() {
           "
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </motion.div>
+
+      {/* Mobile Number Input */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.25 }}
+      >
+        <label className="text-sm font-medium">Mobile number</label>
+        <input
+          type="tel"
+          className="
+            w-full border border-gray-300 rounded-full p-3 mt-1 
+            focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400
+            transition-all duration-150
+          "
+          value={mobileNumber}
+          onChange={(e) => {
+            const val = e.target.value.replace(/^\+91\s?/, ""); // remove +91 prefix only once
+            setMobileNumber(val);
+          }}
+          // onChange={(e) => setMobileNumber(e.target.value)}
+          placeholder="+91 0123456789"
           required
         />
       </motion.div>
