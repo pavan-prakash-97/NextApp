@@ -31,7 +31,7 @@ export default function Topbar() {
 
   return (
     <header className="w-full h-16 border-b shadow-sm flex items-center justify-between px-6 bg-gray-800">
-      <h1 className="text-2xl font-semibold">Next App</h1>
+      <h1 className="text-2xl text-[#FFF] font-semibold">Next App</h1>
 
       <div className="relative flex items-center gap-4" ref={dropdownRef}>
         {user && (

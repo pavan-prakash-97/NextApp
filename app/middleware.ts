@@ -4,6 +4,8 @@ import { authLimiter, apiLimiter, readLimiter, writeLimiter } from "@/app/lib/ra
 
 export async function middleware(req: NextRequest) {
   const pathname = req.nextUrl.pathname;
+  // Debug: log every middleware run (appears in dev console or Vercel/Edge logs)
+  console.log(`[middleware] ${req.method} ${pathname}`);
 
   if (pathname.startsWith("/api")) {
     try {
@@ -22,10 +24,12 @@ export async function middleware(req: NextRequest) {
         await apiLimiter.check(req, 100);
       }
     } catch {
-      return NextResponse.json(
+      const tooMany = NextResponse.json(
         { error: "Too many requests. Please try again later." },
         { status: 429 }
       );
+      tooMany.headers.set("x-middleware-active", "1");
+      return tooMany;
     }
   }
 
@@ -34,16 +38,22 @@ export async function middleware(req: NextRequest) {
   const protectedRoutes = ["/admin", "/user", "/dashboard"];
 
   if (sessionToken && (pathname === "/login" || pathname === "/register")) {
-    return NextResponse.redirect(new URL("/user", req.url));
+    const redirectRes = NextResponse.redirect(new URL("/user", req.url));
+    redirectRes.headers.set("x-middleware-active", "1");
+    return redirectRes;
   }
 
   const isProtected = protectedRoutes.some((p) => pathname.startsWith(p));
 
   if (!sessionToken && isProtected) {
-    return NextResponse.redirect(new URL("/login", req.url));
+    const redirectRes = NextResponse.redirect(new URL("/login", req.url));
+    redirectRes.headers.set("x-middleware-active", "1");
+    return redirectRes;
   }
 
-  return NextResponse.next();
+  const resp = NextResponse.next();
+  resp.headers.set("x-middleware-active", "1");
+  return resp;
 }
 
 export const config = {

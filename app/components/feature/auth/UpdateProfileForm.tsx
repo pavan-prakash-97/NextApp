@@ -4,18 +4,37 @@ import { useEffect, useRef, useState } from "react";
 import Cropper from "react-easy-crop";
 import type { Area } from "react-easy-crop";
 import { userApi } from "@/app/lib/api-client";
-import { motion, AnimatePresence } from "framer-motion";
+
+// ⬇️ shadcn/ui components
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Card, CardContent } from "@/components/ui/card";
+import { Slider } from "@/components/ui/slider";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
 
 export default function UpdateProfileForm() {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [image, setImage] = useState<string>("");
+  const [mobileNumber, setMobileNumber] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [submitting, setSubmitting] = useState<boolean>(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  // read-only fields from Prisma User model
   const [id, setId] = useState<string | null>(null);
   const [email, setEmail] = useState<string | null>(null);
   const [role, setRole] = useState<string | null>(null);
@@ -26,28 +45,26 @@ export default function UpdateProfileForm() {
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const messageTimeoutRef = useRef<number | null>(null);
-  // For cropping/resizing workflow
-  const [origFile, setOrigFile] = useState<File | null>(null);
+
+  // const [origFile, setOrigFile] = useState<File | null>(null);
   const [origUrl, setOrigUrl] = useState<string | null>(null);
-  // react-easy-crop states
-  const [crop, setCrop] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+
+  const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState<number>(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
-  const [outputSize, setOutputSize] = useState<number>(512); // px square output
+  const [outputSize, setOutputSize] = useState<number>(512);
+
   const [processing, setProcessing] = useState<boolean>(false);
   const [showCropModal, setShowCropModal] = useState<boolean>(false);
   const origImageRef = useRef<HTMLImageElement | null>(null);
 
   const handleFile = (file?: File | null) => {
     if (!file) return;
-    // Prepare cropping workflow: keep original file and object URL for preview
-    if (origUrl) {
-      URL.revokeObjectURL(origUrl);
-    }
+    if (origUrl) URL.revokeObjectURL(origUrl);
+
     const url = URL.createObjectURL(file);
-    setOrigFile(file);
+    // setOrigFile(file);
     setOrigUrl(url);
-    // reset preview / crop settings and open modal
     setProcessing(false);
     setShowCropModal(true);
   };
@@ -60,8 +77,7 @@ export default function UpdateProfileForm() {
   const onDrop: React.DragEventHandler<HTMLDivElement> = (e) => {
     e.preventDefault();
     setDragOver(false);
-    const file = e.dataTransfer.files?.[0] ?? null;
-    handleFile(file);
+    handleFile(e.dataTransfer.files?.[0] ?? null);
   };
 
   const onDragOver: React.DragEventHandler<HTMLDivElement> = (e) => {
@@ -74,7 +90,6 @@ export default function UpdateProfileForm() {
     setDragOver(false);
   };
 
-  // Helpers for interactive crop (react-easy-crop)
   const createImage = (url: string) =>
     new Promise<HTMLImageElement>((resolve, reject) => {
       const img = new Image();
@@ -96,7 +111,6 @@ export default function UpdateProfileForm() {
     const ctx = canvas.getContext("2d");
     if (!ctx) throw new Error("Could not get canvas context");
 
-    // draw the cropped area from the source image to the canvas, scaling to output size
     ctx.drawImage(
       image,
       pixelCrop.x,
@@ -114,6 +128,7 @@ export default function UpdateProfileForm() {
 
   const applyCrop = async () => {
     if (!origUrl || !croppedAreaPixels) return;
+
     setProcessing(true);
     try {
       const dataUrl = await getCroppedImg(
@@ -122,13 +137,11 @@ export default function UpdateProfileForm() {
         Math.max(64, Math.min(2048, outputSize))
       );
       setImage(dataUrl);
-      // cleanup
-      if (origUrl) URL.revokeObjectURL(origUrl);
+      URL.revokeObjectURL(origUrl);
       setOrigUrl(null);
-      setOrigFile(null);
+      // setOrigFile(null);
       setShowCropModal(false);
-    } catch (err) {
-      console.error("Apply crop failed", err);
+    } catch {
       setError("Failed to process image");
     } finally {
       setProcessing(false);
@@ -138,7 +151,7 @@ export default function UpdateProfileForm() {
   const cancelCrop = () => {
     if (origUrl) URL.revokeObjectURL(origUrl);
     setOrigUrl(null);
-    setOrigFile(null);
+    // setOrigFile(null);
     setShowCropModal(false);
   };
 
@@ -149,32 +162,25 @@ export default function UpdateProfileForm() {
       try {
         setLoading(true);
         const data = await userApi.getProfile();
-        // API returns { user: { ... } }
         const user = data?.user ?? data;
 
         if (!mounted) return;
-        const fullName = user?.name ?? "";
-        const parts = fullName.trim() ? fullName.trim().split(/\s+/) : [];
-        const first = parts.length ? parts.shift() || "" : "";
-        const last = parts.length ? parts.join(" ") : "";
-        setFirstName(first);
-        setLastName(last);
+
+        const parts = (user?.name ?? "").trim().split(/\s+/);
+        setFirstName(parts.shift() || "");
+        setLastName(parts.join(" "));
         setImage(user?.image || "");
         setRole(user?.role || null);
-
-        // Populate read-only fields when available
+        setMobileNumber(user?.mobileNumber || "");
         setId(user?.id ?? null);
         setEmail(user?.email ?? null);
-        // emailVerified removed from UI per request
         setCreatedAt(
           user?.createdAt ? new Date(user.createdAt).toLocaleString() : null
         );
         setUpdatedAt(
           user?.updatedAt ? new Date(user.updatedAt).toLocaleString() : null
         );
-      } catch (err) {
-        console.error("Failed to load profile", err);
-        if (!mounted) return;
+      } catch {
         setError("Failed to load profile");
       } finally {
         if (mounted) setLoading(false);
@@ -194,353 +200,240 @@ export default function UpdateProfileForm() {
     setSubmitting(true);
 
     try {
-      // Only send fields the server accepts (name and image url/string)
-      const payload: { name?: string; image?: string } = {};
-      const combinedName = `${firstName || ""}${
-        lastName ? ` ${lastName}` : ""
-      }`.trim();
-      if (combinedName) payload.name = combinedName;
-      if (image !== undefined && image !== "") payload.image = image;
+      const payload: { name?: string; image?: string; mobileNumber?: string } =
+        {};
+      const fullName = `${firstName} ${lastName}`.trim();
+      if (fullName) payload.name = fullName;
+      if (image) payload.image = image;
+      if (mobileNumber) payload.mobileNumber = mobileNumber;
 
-      const res = await userApi.updateProfile(payload);
-      console.log("update Profile response", res);
+      await userApi.updateProfile(payload);
+
       setMessage("Profile updated successfully.");
-      // clear any existing timeout
-      if (messageTimeoutRef.current) {
-        clearTimeout(messageTimeoutRef.current);
-      }
-      // hide the message after 5 seconds
+      if (messageTimeoutRef.current) clearTimeout(messageTimeoutRef.current);
+
       messageTimeoutRef.current = window.setTimeout(() => {
         setMessage(null);
-        messageTimeoutRef.current = null;
       }, 5000);
-    } catch (err) {
-      console.error("Profile update failed", err);
-      setError((err as Error)?.message || "Failed to update profile");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Failed to update profile");
+      }
     } finally {
       setSubmitting(false);
     }
   };
 
-  // cleanup timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (messageTimeoutRef.current) {
-        clearTimeout(messageTimeoutRef.current);
-      }
-    };
-  }, []);
-
-  // Revoke object URL when it changes or when component unmounts
-  useEffect(() => {
-    return () => {
-      if (origUrl) URL.revokeObjectURL(origUrl);
-    };
-  }, [origUrl]);
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className="mt-6 p-6 bg-white text-gray-900 rounded-xl max-w-2xl shadow-md border border-gray-100 backdrop-blur-sm"
-    >
-      <div className="flex justify-between">
-        <h2 className="text-xl font-semibold mb-4">Edit Profile</h2>
-        <div>
-          {message && <p className="text-green-600">{message}</p>}
-          {error && <p className="text-red-600">{error}</p>}
+    <Card className="max-w-2xl mx-auto mt-6">
+      <CardContent className="p-6">
+        <div className="flex justify-between mb-4">
+          <h2 className="text-xl font-semibold">Edit Profile</h2>
+
+          <div>
+            {message && <p className="text-green-600">{message}</p>}
+            {error && <p className="text-red-600">{error}</p>}
+          </div>
         </div>
-      </div>
 
-      {loading ? (
-        <p className="text-gray-600">Loading profile…</p>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Top: avatar + read-only metadata */}
-          <div className="flex items-center gap-6">
-            <div className="flex flex-col gap-2">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className={`flex-shrink-0 cursor-pointer transition-all duration-200 ${
-                  dragOver
-                    ? "ring-4 ring-indigo-300 rounded-full shadow-lg"
-                    : ""
-                }`}
-                onDrop={onDrop}
-                onDragOver={onDragOver}
-                onDragLeave={onDragLeave}
-                onClick={() => fileInputRef.current?.click()}
-                role="button"
-                tabIndex={0}
-              >
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept="image/*"
-                  onChange={onFileChange}
-                  className="hidden"
-                />
-                {image ? (
-                  <img
-                    src={image}
-                    alt="Avatar"
-                    className="h-24 w-24 rounded-full object-cover border border-gray-200"
+        {loading ? (
+          <p className="text-gray-600">Loading profile…</p>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Avatar */}
+            <div className="flex items-center gap-6">
+              <div className="flex flex-col items-center gap-2">
+                <div
+                  onClick={() => fileInputRef.current?.click()}
+                  onDrop={onDrop}
+                  onDragOver={onDragOver}
+                  onDragLeave={onDragLeave}
+                  className={`cursor-pointer h-24 w-24 rounded-full overflow-hidden border ${
+                    dragOver ? "ring-4 ring-indigo-300" : ""
+                  }`}
+                >
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={onFileChange}
                   />
-                ) : (
-                  <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center border border-gray-200">
-                    {/* simple user SVG icon */}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-gray-400"
-                    >
-                      <path d="M20 21v-2a4 4 0 0 0-3-3.87"></path>
-                      <path d="M4 21v-2a4 4 0 0 1 3-3.87"></path>
-                      <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
+                  {image ? (
+                    <img
+                      src={image}
+                      alt="avatar"
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <div className="h-full w-full flex items-center justify-center bg-gray-100">
+                      <span className="text-gray-400 text-sm">No image</span>
+                    </div>
+                  )}
+                </div>
+
+                <p className="text-xs text-center">{role}</p>
+              </div>
+
+              {/* Read-only fields */}
+              <div className="grid grid-cols-1 gap-3 w-full">
+                <div>
+                  <Label>User ID</Label>
+                  <div className="p-2 border rounded bg-gray-50 text-sm">
+                    {id ?? "—"}
                   </div>
-                )}
-              </motion.div>
-              <div className="text-center text-xs">
-                {role?.toLocaleUpperCase()}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-3 w-full">
-              <div>
-                <label className="block text-sm font-medium text-gray-600">
-                  User ID
-                </label>
-
-                <div
-                  className="
-                    mt-1 
-                    w-full 
-                    rounded-md 
-                    border 
-                    border-gray-200 
-                    px-3 
-                    py-2 
-                    bg-gray-50 
-                    text-gray-700 
-                    text-sm
-                  "
-                >
-                  {id ?? "—"}
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-600">
-                  Email
-                </label>
-
-                <div
-                  className="
-                    mt-1 
-                    w-full 
-                    rounded-md 
-                    border 
-                    border-gray-200 
-                    px-3 
-                    py-2 
-                    bg-gray-50 
-                    text-gray-700 
-                    text-sm
-                  "
-                >
-                  {email ?? "—"}
+                <div>
+                  <Label>Email</Label>
+                  <div className="p-2 border rounded bg-gray-50 text-sm">
+                    {email ?? "—"}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Editable fields: first & last name */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                First name
-              </label>
-              <input
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                className="mt-1 block w-full rounded-md border border-gray-200 px-3 py-2 bg-white text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400"
-                placeholder="First name"
-              />
+            {/* Editable fields */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label>First name</Label>
+                <Input
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+              </div>
+
+              <div>
+                <Label>Last name</Label>
+                <Input
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+              </div>
+
+              <div>
+                <Label>Mobile number</Label>
+                <Input
+                  value={mobileNumber}
+                  onChange={(e) => setMobileNumber(e.target.value)}
+                  placeholder="+91 0123456789"
+                />
+              </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Last name
-              </label>
-              <input
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                className="mt-1 block w-full rounded-md border border-gray-200 px-3 py-2 bg-white text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400"
-                placeholder="Last name"
-              />
-            </div>
-          </div>
-
-          {/* Image crop / preview panel (shows when a file has been selected) */}
-          {origUrl ? (
-            <div className="bg-gray-50 p-4 rounded-md border border-gray-200">
-              <div className="md:flex md:items-start md:gap-6">
-                <div className="flex-shrink-0">
+            {/* Crop Preview Panel */}
+            {origUrl && (
+              <div className="p-4 border rounded bg-gray-50">
+                <div className="flex gap-6 items-start">
                   <img
                     src={origUrl}
-                    alt="Original"
+                    alt="preview"
+                    className="h-40 w-40 border rounded object-contain"
                     ref={origImageRef}
-                    className="h-40 w-40 object-contain rounded-md border"
                   />
-                </div>
-
-                <div className="mt-3 md:mt-0 md:flex-1">
-                  <div className="flex items-start gap-3">
-                    <div className="text-sm text-gray-600">
-                      A crop modal will open so you can select and move the crop
-                      area.
-                    </div>
-                    <div className="ml-auto flex items-center gap-2">
-                      <button
-                        type="button"
-                        onClick={() => setShowCropModal(true)}
-                        className="rounded bg-gray-200 px-3 py-1 text-sm"
-                      >
-                        Open Crop
-                      </button>
-                      <button
-                        type="button"
-                        onClick={cancelCrop}
-                        className="rounded bg-white border px-3 py-1 text-sm"
-                      >
-                        Cancel
-                      </button>
-                    </div>
+                  <div className="flex-1 text-sm text-gray-600">
+                    Crop modal will open where you can adjust the image.
                   </div>
-                </div>
-              </div>
-            </div>
-          ) : null}
-
-          <div className="flex items-center gap-3">
-            <div className="flex w-full justify-center mt-6">
-              <motion.button
-                whileTap={{ scale: 0.97 }}
-                whileHover={{ scale: loading ? 1 : 1.02 }}
-                type="submit"
-                disabled={loading}
-                className="
-          w-fit bg-gray-800 text-white py-3 px-8 mt-3 rounded-full shadow-md 
-          hover:bg-indigo-700 transition disabled:opacity-60
-        "
-              >
-                {submitting ? "Saving..." : "Save changes"}
-              </motion.button>
-            </div>
-          </div>
-          {/* Created / Updated timestamps at bottom */}
-          <div className="mt-4 text-xs text-gray-500 flex gap-4 justify-between">
-            <div>Created: {createdAt ?? "—"}</div>
-            <div>Last updated: {updatedAt ?? "—"}</div>
-          </div>
-        </form>
-      )}
-      {/* Crop modal overlay */}
-      <AnimatePresence>
-        {showCropModal && origUrl && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="w-full max-w-3xl bg-white rounded-xl shadow-2xl overflow-hidden"
-            >
-              <div className="p-5">
-                <h3 className="text-xl font-semibold mb-4">Crop your image</h3>
-
-                <div className="relative h-96 bg-gray-200 rounded-lg overflow-hidden shadow-inner">
-                  <Cropper
-                    image={origUrl}
-                    crop={crop}
-                    zoom={zoom}
-                    aspect={1}
-                    onCropChange={(c) => setCrop(c)}
-                    onZoomChange={(z) => setZoom(z)}
-                    onCropComplete={(_, pixels) => setCroppedAreaPixels(pixels)}
-                  />
-                </div>
-
-                <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="md:col-span-2">
-                    <label className="text-sm font-medium text-gray-700">
-                      Zoom
-                    </label>
-                    <input
-                      type="range"
-                      min={1}
-                      max={3}
-                      step={0.02}
-                      value={zoom}
-                      onChange={(e) => setZoom(Number(e.target.value))}
-                      className="w-full accent-indigo-600"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-sm font-medium text-gray-700">
-                      Output size (px)
-                    </label>
-                    <select
-                      value={outputSize}
-                      onChange={(e) => setOutputSize(Number(e.target.value))}
-                      className="mt-1 w-full rounded-md border px-2 py-1"
+                  <div className="flex gap-2 ml-auto">
+                    <Button
+                      variant="secondary"
+                      type="button"
+                      onClick={() => setShowCropModal(true)}
                     >
-                      <option value={128}>128</option>
-                      <option value={256}>256</option>
-                      <option value={512}>512</option>
-                      <option value={1024}>1024</option>
-                    </select>
+                      Open Crop
+                    </Button>
+                    <Button
+                      variant="outline"
+                      type="button"
+                      onClick={cancelCrop}
+                    >
+                      Cancel
+                    </Button>
                   </div>
                 </div>
-
-                <div className="mt-5 flex justify-end gap-3">
-                  <motion.button
-                    whileTap={{ scale: 0.95 }}
-                    onClick={cancelCrop}
-                    className="px-4 py-2 rounded-md border bg-white hover:bg-gray-100 transition"
-                  >
-                    Cancel
-                  </motion.button>
-
-                  <motion.button
-                    whileTap={{ scale: 0.95 }}
-                    onClick={applyCrop}
-                    disabled={processing}
-                    className="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 shadow disabled:opacity-60"
-                  >
-                    {processing ? "Processing..." : "Apply Crop"}
-                  </motion.button>
-                </div>
               </div>
-            </motion.div>
-          </motion.div>
+            )}
+
+            <div className="flex justify-center">
+              <Button type="submit" disabled={submitting}>
+                {submitting ? "Saving..." : "Save changes"}
+              </Button>
+            </div>
+
+            <div className="flex justify-between text-xs text-gray-500">
+              <p>Created: {createdAt ?? "—"}</p>
+              <p>Last updated: {updatedAt ?? "—"}</p>
+            </div>
+          </form>
         )}
-      </AnimatePresence>
-    </motion.div>
+      </CardContent>
+
+      {/* Crop Modal */}
+      <Dialog open={showCropModal} onOpenChange={setShowCropModal}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle>Crop your image</DialogTitle>
+          </DialogHeader>
+
+          {origUrl && (
+            <div className="space-y-4">
+              <div className="relative h-96 bg-gray-200 rounded overflow-hidden">
+                <Cropper
+                  image={origUrl}
+                  crop={crop}
+                  zoom={zoom}
+                  aspect={1}
+                  onCropChange={setCrop}
+                  onZoomChange={setZoom}
+                  onCropComplete={(_, pixels) => setCroppedAreaPixels(pixels)}
+                />
+              </div>
+
+              {/* Zoom Slider */}
+              <div>
+                <Label>Zoom</Label>
+                <Slider
+                  min={1}
+                  max={3}
+                  step={0.02}
+                  value={[zoom]}
+                  onValueChange={(v) => setZoom(v[0])}
+                />
+              </div>
+
+              {/* Output Size */}
+              <div>
+                <Label>Output Size</Label>
+                <Select
+                  value={String(outputSize)}
+                  onValueChange={(v) => setOutputSize(Number(v))}
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="128">128</SelectItem>
+                    <SelectItem value="256">256</SelectItem>
+                    <SelectItem value="512">512</SelectItem>
+                    <SelectItem value="1024">1024</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="flex justify-end gap-3">
+                <Button variant="outline" onClick={cancelCrop}>
+                  Cancel
+                </Button>
+                <Button onClick={applyCrop} disabled={processing}>
+                  {processing ? "Processing..." : "Apply Crop"}
+                </Button>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+    </Card>
   );
 }

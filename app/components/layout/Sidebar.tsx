@@ -38,7 +38,7 @@ export default function Sidebar() {
 
   return (
     <aside className="w-64 border-r shadow-sm p-6 bg-gray-800">
-      <h2 className="text-xl font-semibold mb-6">Dashboard</h2>
+      <h2 className="text-xl font-semibold text-[#FFF] mb-6">Dashboard</h2>
 
       <nav className="space-y-2">
         {role === "admin" && (
