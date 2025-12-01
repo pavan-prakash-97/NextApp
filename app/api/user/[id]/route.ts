@@ -1,12 +1,15 @@
+import { NextResponse } from "next/server";
 import { auth } from "@/app/lib/auth";
-import { NextRequest, NextResponse } from "next/server";
 import { getRedisClient } from "@/app/lib/redis";
 import { prisma } from "@/app/lib/prisma";
 
-export async function GET(req: NextRequest, context: { params: { id: string } }) {
-  const { id } = context.params;
+export async function GET(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
+  const { id } = params;
 
-  const session = await auth.api.getSession({ headers: req.headers });
+  const session = await auth.api.getSession({ headers: request.headers });
   if (!session?.user)
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
@@ -21,10 +24,10 @@ export async function GET(req: NextRequest, context: { params: { id: string } })
   if (redis) {
     try {
       const cached = await redis.get(cacheKey);
-      if (cached) return NextResponse.json({ user: JSON.parse(cached) });
-    } catch {
-      // ignore redis errors
-    }
+      if (cached) {
+        return NextResponse.json({ user: JSON.parse(cached) });
+      }
+    } catch {}
   }
 
   const user = await prisma.user.findUnique({
@@ -51,11 +54,10 @@ export async function GET(req: NextRequest, context: { params: { id: string } })
 
   if (redis) {
     try {
-      const ttl = Number(process.env.REDIS_CACHE_TTL || 60);
-      await redis.set(cacheKey, JSON.stringify(respUser), { EX: ttl });
-    } catch {
-      // ignore
-    }
+      await redis.set(cacheKey, JSON.stringify(respUser), {
+        EX: Number(process.env.REDIS_CACHE_TTL || 60),
+      });
+    } catch {}
   }
 
   return NextResponse.json({ user: respUser });

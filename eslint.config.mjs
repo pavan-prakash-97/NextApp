@@ -1,13 +1,10 @@
+import next from "eslint-plugin-next";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
-    ignores: [
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-      "node_modules/**",
-    ],
+    plugins: { next },
+    extends: ["plugin:next/recommended"],
+    ignores: [".next/**", "out/**", "build/**", "node_modules/**"],
   },
 ]);
