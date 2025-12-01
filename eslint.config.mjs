@@ -1,18 +1,15 @@
-// eslint.config.mjs
-
 import { defineConfig } from "eslint/config";
 import nextConfig from "eslint-config-next";
 
 export default defineConfig([
-  {
-    ...nextConfig,
-  },
+  ...nextConfig, // ← NOT nextConfig(), it's an array
   {
     ignores: [
       ".next/**",
       "node_modules/**",
-      "build/**",
       "out/**",
+      "dist-worker/**",
+      "build/**",
       "next-env.d.ts",
     ],
   },

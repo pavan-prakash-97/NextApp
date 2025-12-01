@@ -62,8 +62,11 @@ export default function Topbar() {
             className="flex items-center gap-3 cursor-pointer"
           >
             {image ? (
-              <img
-                src={image}
+              <Image
+                src={image} // fallback so Image never crashes
+                alt="User avatar"
+                width={40}
+                height={40}
                 className="h-10 w-10 rounded-full object-cover border"
               />
             ) : (

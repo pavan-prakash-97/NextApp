@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Cropper from "react-easy-crop";
 import type { Area } from "react-easy-crop";
 import { userApi } from "@/app/lib/api-client";
+import NextImage from "next/image";
 
 // ⬇️ shadcn/ui components
 import { Button } from "@/components/ui/button";
@@ -89,7 +90,7 @@ export default function UpdateProfileForm() {
     new Promise<HTMLImageElement>((resolve, reject) => {
       const img = new Image();
       img.addEventListener("load", () => resolve(img));
-      img.addEventListener("error", (err) => reject(err));
+      img.addEventListener("error", (err: any) => reject(err));
       img.setAttribute("crossOrigin", "anonymous");
       img.src = url;
     });
@@ -314,11 +315,14 @@ export default function UpdateProfileForm() {
                   />
 
                   {image ? (
-                    <img
-                      src={image}
-                      alt="avatar"
-                      className="h-full w-full object-cover"
-                    />
+                    <div className="relative h-24 w-24 rounded-full overflow-hidden">
+                      <NextImage
+                        src={image}
+                        alt="avatar"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   ) : (
                     <div className="h-full w-full flex items-center justify-center bg-gray-100">
                       <span className="text-gray-400 text-sm">No image</span>
@@ -382,12 +386,15 @@ export default function UpdateProfileForm() {
             {origUrl && (
               <div className="p-4 border rounded bg-gray-50">
                 <div className="flex gap-6 items-start">
-                  <img
-                    src={origUrl}
-                    alt="preview"
-                    className="h-40 w-40 border rounded object-contain"
-                    ref={origImageRef}
-                  />
+                  <div className="relative h-40 w-40 border rounded overflow-hidden">
+                    <NextImage
+                      src={origUrl}
+                      alt="preview"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+
                   <div className="flex-1 text-sm text-gray-600">
                     Crop modal will open where you can adjust the image.
                   </div>
