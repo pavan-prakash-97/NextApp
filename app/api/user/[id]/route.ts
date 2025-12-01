@@ -3,18 +3,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { getRedisClient } from "@/app/lib/redis";
 import { prisma } from "@/app/lib/prisma";
 
-export async function GET(
-  req: NextRequest,
-  ctx: { params: { id: string } | Promise<{ id: string }> }
-) {
-  const p = await ctx.params;
-  const { id } = p as { id: string };
+export async function GET(req: NextRequest, context: { params: { id: string } }) {
+  const { id } = context.params;
 
   const session = await auth.api.getSession({ headers: req.headers });
   if (!session?.user)
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  // Only allow access if the requestor is admin or the owner of the record
   const userIsAdmin = (session.user.role ?? "user").toLowerCase() === "admin";
   if (!userIsAdmin && session.user.id !== id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
