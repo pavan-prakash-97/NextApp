@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     const toNotify = await prisma.user.findMany({
       where: {
         AND: [
-          { OR: [{ image: null }, { image: "" }] },
+          { OR: [{ profilePicSmall: null }, { profilePicSmall: "" }] },
           { updatedAt: { lt: cutoff } },
         ],
       },

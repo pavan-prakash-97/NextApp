@@ -29,7 +29,8 @@ export type UserMinAggregateOutputType = {
   name: string | null
   email: string | null
   emailVerified: boolean | null
-  image: string | null
+  profilePicLarge: string | null
+  profilePicSmall: string | null
   lastAvatarReminderAt: Date | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -42,7 +43,8 @@ export type UserMaxAggregateOutputType = {
   name: string | null
   email: string | null
   emailVerified: boolean | null
-  image: string | null
+  profilePicLarge: string | null
+  profilePicSmall: string | null
   lastAvatarReminderAt: Date | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -55,7 +57,8 @@ export type UserCountAggregateOutputType = {
   name: number
   email: number
   emailVerified: number
-  image: number
+  profilePicLarge: number
+  profilePicSmall: number
   lastAvatarReminderAt: number
   createdAt: number
   updatedAt: number
@@ -70,7 +73,8 @@ export type UserMinAggregateInputType = {
   name?: true
   email?: true
   emailVerified?: true
-  image?: true
+  profilePicLarge?: true
+  profilePicSmall?: true
   lastAvatarReminderAt?: true
   createdAt?: true
   updatedAt?: true
@@ -83,7 +87,8 @@ export type UserMaxAggregateInputType = {
   name?: true
   email?: true
   emailVerified?: true
-  image?: true
+  profilePicLarge?: true
+  profilePicSmall?: true
   lastAvatarReminderAt?: true
   createdAt?: true
   updatedAt?: true
@@ -96,7 +101,8 @@ export type UserCountAggregateInputType = {
   name?: true
   email?: true
   emailVerified?: true
-  image?: true
+  profilePicLarge?: true
+  profilePicSmall?: true
   lastAvatarReminderAt?: true
   createdAt?: true
   updatedAt?: true
@@ -182,7 +188,8 @@ export type UserGroupByOutputType = {
   name: string | null
   email: string | null
   emailVerified: boolean
-  image: string | null
+  profilePicLarge: string | null
+  profilePicSmall: string | null
   lastAvatarReminderAt: Date | null
   createdAt: Date
   updatedAt: Date
@@ -216,7 +223,8 @@ export type UserWhereInput = {
   name?: Prisma.StringNullableFilter<"User"> | string | null
   email?: Prisma.StringNullableFilter<"User"> | string | null
   emailVerified?: Prisma.BoolFilter<"User"> | boolean
-  image?: Prisma.StringNullableFilter<"User"> | string | null
+  profilePicLarge?: Prisma.StringNullableFilter<"User"> | string | null
+  profilePicSmall?: Prisma.StringNullableFilter<"User"> | string | null
   lastAvatarReminderAt?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
@@ -231,7 +239,8 @@ export type UserOrderByWithRelationInput = {
   name?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrderInput | Prisma.SortOrder
   emailVerified?: Prisma.SortOrder
-  image?: Prisma.SortOrderInput | Prisma.SortOrder
+  profilePicLarge?: Prisma.SortOrderInput | Prisma.SortOrder
+  profilePicSmall?: Prisma.SortOrderInput | Prisma.SortOrder
   lastAvatarReminderAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -250,7 +259,8 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   name?: Prisma.StringNullableFilter<"User"> | string | null
   email?: Prisma.StringNullableFilter<"User"> | string | null
   emailVerified?: Prisma.BoolFilter<"User"> | boolean
-  image?: Prisma.StringNullableFilter<"User"> | string | null
+  profilePicLarge?: Prisma.StringNullableFilter<"User"> | string | null
+  profilePicSmall?: Prisma.StringNullableFilter<"User"> | string | null
   lastAvatarReminderAt?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
@@ -264,7 +274,8 @@ export type UserOrderByWithAggregationInput = {
   name?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrderInput | Prisma.SortOrder
   emailVerified?: Prisma.SortOrder
-  image?: Prisma.SortOrderInput | Prisma.SortOrder
+  profilePicLarge?: Prisma.SortOrderInput | Prisma.SortOrder
+  profilePicSmall?: Prisma.SortOrderInput | Prisma.SortOrder
   lastAvatarReminderAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -283,7 +294,8 @@ export type UserScalarWhereWithAggregatesInput = {
   name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   email?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   emailVerified?: Prisma.BoolWithAggregatesFilter<"User"> | boolean
-  image?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  profilePicLarge?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  profilePicSmall?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   lastAvatarReminderAt?: Prisma.DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -296,7 +308,8 @@ export type UserCreateInput = {
   name?: string | null
   email?: string | null
   emailVerified?: boolean
-  image?: string | null
+  profilePicLarge?: string | null
+  profilePicSmall?: string | null
   lastAvatarReminderAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -311,7 +324,8 @@ export type UserUncheckedCreateInput = {
   name?: string | null
   email?: string | null
   emailVerified?: boolean
-  image?: string | null
+  profilePicLarge?: string | null
+  profilePicSmall?: string | null
   lastAvatarReminderAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -326,7 +340,8 @@ export type UserUpdateInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicLarge?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicSmall?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastAvatarReminderAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -341,7 +356,8 @@ export type UserUncheckedUpdateInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicLarge?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicSmall?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastAvatarReminderAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -356,7 +372,8 @@ export type UserCreateManyInput = {
   name?: string | null
   email?: string | null
   emailVerified?: boolean
-  image?: string | null
+  profilePicLarge?: string | null
+  profilePicSmall?: string | null
   lastAvatarReminderAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -369,7 +386,8 @@ export type UserUpdateManyMutationInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicLarge?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicSmall?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastAvatarReminderAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -382,7 +400,8 @@ export type UserUncheckedUpdateManyInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicLarge?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicSmall?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastAvatarReminderAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -395,7 +414,8 @@ export type UserCountOrderByAggregateInput = {
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
   emailVerified?: Prisma.SortOrder
-  image?: Prisma.SortOrder
+  profilePicLarge?: Prisma.SortOrder
+  profilePicSmall?: Prisma.SortOrder
   lastAvatarReminderAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -408,7 +428,8 @@ export type UserMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
   emailVerified?: Prisma.SortOrder
-  image?: Prisma.SortOrder
+  profilePicLarge?: Prisma.SortOrder
+  profilePicSmall?: Prisma.SortOrder
   lastAvatarReminderAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -421,7 +442,8 @@ export type UserMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
   emailVerified?: Prisma.SortOrder
-  image?: Prisma.SortOrder
+  profilePicLarge?: Prisma.SortOrder
+  profilePicSmall?: Prisma.SortOrder
   lastAvatarReminderAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -487,7 +509,8 @@ export type UserCreateWithoutSessionsInput = {
   name?: string | null
   email?: string | null
   emailVerified?: boolean
-  image?: string | null
+  profilePicLarge?: string | null
+  profilePicSmall?: string | null
   lastAvatarReminderAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -501,7 +524,8 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   name?: string | null
   email?: string | null
   emailVerified?: boolean
-  image?: string | null
+  profilePicLarge?: string | null
+  profilePicSmall?: string | null
   lastAvatarReminderAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -531,7 +555,8 @@ export type UserUpdateWithoutSessionsInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicLarge?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicSmall?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastAvatarReminderAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -545,7 +570,8 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicLarge?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicSmall?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastAvatarReminderAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -559,7 +585,8 @@ export type UserCreateWithoutAccountsInput = {
   name?: string | null
   email?: string | null
   emailVerified?: boolean
-  image?: string | null
+  profilePicLarge?: string | null
+  profilePicSmall?: string | null
   lastAvatarReminderAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -573,7 +600,8 @@ export type UserUncheckedCreateWithoutAccountsInput = {
   name?: string | null
   email?: string | null
   emailVerified?: boolean
-  image?: string | null
+  profilePicLarge?: string | null
+  profilePicSmall?: string | null
   lastAvatarReminderAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -603,7 +631,8 @@ export type UserUpdateWithoutAccountsInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicLarge?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicSmall?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastAvatarReminderAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -617,7 +646,8 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicLarge?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  profilePicSmall?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastAvatarReminderAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -671,7 +701,8 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   name?: boolean
   email?: boolean
   emailVerified?: boolean
-  image?: boolean
+  profilePicLarge?: boolean
+  profilePicSmall?: boolean
   lastAvatarReminderAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -687,7 +718,8 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   name?: boolean
   email?: boolean
   emailVerified?: boolean
-  image?: boolean
+  profilePicLarge?: boolean
+  profilePicSmall?: boolean
   lastAvatarReminderAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -700,7 +732,8 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   name?: boolean
   email?: boolean
   emailVerified?: boolean
-  image?: boolean
+  profilePicLarge?: boolean
+  profilePicSmall?: boolean
   lastAvatarReminderAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -713,7 +746,8 @@ export type UserSelectScalar = {
   name?: boolean
   email?: boolean
   emailVerified?: boolean
-  image?: boolean
+  profilePicLarge?: boolean
+  profilePicSmall?: boolean
   lastAvatarReminderAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -721,7 +755,7 @@ export type UserSelectScalar = {
   mobileNumber?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "image" | "lastAvatarReminderAt" | "createdAt" | "updatedAt" | "role" | "mobileNumber", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "profilePicLarge" | "profilePicSmall" | "lastAvatarReminderAt" | "createdAt" | "updatedAt" | "role" | "mobileNumber", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
@@ -741,7 +775,8 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     name: string | null
     email: string | null
     emailVerified: boolean
-    image: string | null
+    profilePicLarge: string | null
+    profilePicSmall: string | null
     lastAvatarReminderAt: Date | null
     createdAt: Date
     updatedAt: Date
@@ -1176,7 +1211,8 @@ export interface UserFieldRefs {
   readonly name: Prisma.FieldRef<"User", 'String'>
   readonly email: Prisma.FieldRef<"User", 'String'>
   readonly emailVerified: Prisma.FieldRef<"User", 'Boolean'>
-  readonly image: Prisma.FieldRef<"User", 'String'>
+  readonly profilePicLarge: Prisma.FieldRef<"User", 'String'>
+  readonly profilePicSmall: Prisma.FieldRef<"User", 'String'>
   readonly lastAvatarReminderAt: Prisma.FieldRef<"User", 'DateTime'>
   readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"User", 'DateTime'>

@@ -1,14 +1,17 @@
 "use client";
 
+import { userApi } from "@/app/lib/api-client";
 import { signOut, useSession } from "@/app/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 export default function Topbar() {
   const { data: session } = useSession();
   const user = session?.user;
   const router = useRouter();
 
+  const [image, setImage] = useState<string>("");
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -20,7 +23,10 @@ export default function Topbar() {
   // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setOpen(false);
       }
     }
@@ -28,6 +34,22 @@ export default function Topbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    async function fetchRole() {
+      if (!session?.user?.id) return;
+      try {
+        const res = await userApi.getRole();
+
+        if (res) {
+          setImage(res?.profilePicSmall);
+        }
+      } catch (error) {
+        console.error("Failed to fetch role:", error);
+      }
+    }
+    fetchRole();
+  }, [session]);
 
   return (
     <header className="w-full h-16 border-b shadow-sm flex items-center justify-between px-6 bg-gray-800">
@@ -39,10 +61,12 @@ export default function Topbar() {
             onClick={() => setOpen((prev) => !prev)}
             className="flex items-center gap-3 cursor-pointer"
           >
-            {user.image ? (
-              <img
-                src={user.image}
-                alt={user.name ?? "avatar"}
+            {image ? (
+              <Image
+                src={image} // fallback so Image never crashes
+                alt="User avatar"
+                width={40}
+                height={40}
                 className="h-10 w-10 rounded-full object-cover border"
               />
             ) : (
