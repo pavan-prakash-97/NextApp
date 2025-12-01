@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useSession } from "@/app/lib/auth-client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { userApi } from "@/app/lib/api-client";
 
 export default function Sidebar() {
   const { data: session } = useSession();
@@ -13,10 +14,10 @@ export default function Sidebar() {
     async function fetchRole() {
       if (!session?.user?.id) return;
       try {
-        const res = await fetch("/api/user/role");
-        if (res.ok) {
-          const data = await res.json();
-          setRole(data.role?.name || null);
+        const res = await userApi.getRole();
+
+        if (res) {
+          setRole(res?.role);
         }
       } catch (error) {
         console.error("Failed to fetch role:", error);

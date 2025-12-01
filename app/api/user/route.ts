@@ -85,21 +85,22 @@ export async function PATCH(req: NextRequest) {
   }
 
   try {
-    const { name, image, mobileNumber } = data;
+    const { name, profilePicSmall, mobileNumber } = data;
 
     // Update user in database
     const updatedUser = await prisma.user.update({
       where: { id: session.user.id },
       data: {
         ...(name !== undefined && { name }),
-        ...(image !== undefined && { image }),
+        ...(profilePicSmall !== undefined && { profilePicSmall }),
         ...(mobileNumber !== undefined && { mobileNumber }),
       },
       select: {
         id: true,
         name: true,
         email: true,
-        image: true,
+        profilePicSmall: true,
+        profilePicLarge: true,
         role: true,
       },
     });
@@ -153,6 +154,9 @@ export async function PATCH(req: NextRequest) {
       userId: session.user.id,
       endpoint: "PATCH /api/user",
     });
-    return NextResponse.json({ error: "Failed to update profile" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to update profile" },
+      { status: 500 }
+    );
   }
 }

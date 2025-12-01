@@ -1,31 +1,25 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?
-  emailVerified Boolean   @default(false)
-  image         String?
-  lastAvatarReminderAt DateTime?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  accounts      Account[]
-  sessions      Session[]
-  role          String    @default("USER")
-  mobileNumber  String?   @unique
+  id              String    @id @default(cuid())
+  name            String?
+  email           String?
+  profilePicLarge String?
+  profilePicSmall String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  role            String    @default("USER")
+  mobileNumber    String?   @unique
+  emailVerified   Boolean   @default(false)
+  accounts        Account[]
+  sessions        Session[]
 
   @@map("user")
 }
@@ -33,12 +27,12 @@ model User {
 model Session {
   id        String   @id @default(cuid())
   userId    String
-  token     String   @unique
-  expiresAt DateTime
   ipAddress String?
   userAgent String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  expiresAt DateTime
+  token     String   @unique
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("session")
@@ -47,18 +41,18 @@ model Session {
 model Account {
   id                    String    @id @default(cuid())
   userId                String
-  accountId             String
-  providerId            String
-  accessToken           String?
-  refreshToken          String?
-  accessTokenExpiresAt  DateTime?
-  refreshTokenExpiresAt DateTime?
   scope                 String?
-  idToken               String?
-  password              String?
-  type                  String?
   createdAt             DateTime  @default(now())
   updatedAt             DateTime  @updatedAt
+  accessToken           String?
+  accessTokenExpiresAt  DateTime?
+  accountId             String
+  idToken               String?
+  password              String?
+  providerId            String
+  refreshToken          String?
+  refreshTokenExpiresAt DateTime?
+  type                  String?
   user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([providerId, accountId])
@@ -68,10 +62,10 @@ model Account {
 model Verification {
   id         String   @id @default(cuid())
   identifier String
-  value      String
-  expiresAt  DateTime
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+  expiresAt  DateTime
+  value      String
 
   @@map("verification")
 }

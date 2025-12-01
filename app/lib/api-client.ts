@@ -10,7 +10,7 @@ export const userApi = {
   },
 
   // Update user profile
-  updateProfile: async (data: { name?: string; image?: string; mobileNumber?: string }) => {
+  updateProfile: async (data: { name?: string; mobileNumber?: string }) => {
     const response = await axiosInstance.patch("/api/user", data);
     return response.data;
   },

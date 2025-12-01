@@ -17,18 +17,13 @@ import {
 } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
 
 export default function UpdateProfileForm() {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
-  const [image, setImage] = useState<string>("");
+  const [image, setImage] = useState<string>(""); // what is displayed in <img>
+  const [originalImage, setOriginalImage] = useState<string>(""); // DB version
+
   const [mobileNumber, setMobileNumber] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [submitting, setSubmitting] = useState<boolean>(false);
@@ -52,7 +47,7 @@ export default function UpdateProfileForm() {
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState<number>(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
-  const [outputSize, setOutputSize] = useState<number>(512);
+  // const [outputSize, setOutputSize] = useState<number>(512);
 
   const [processing, setProcessing] = useState<boolean>(false);
   const [showCropModal, setShowCropModal] = useState<boolean>(false);
@@ -134,7 +129,7 @@ export default function UpdateProfileForm() {
       const dataUrl = await getCroppedImg(
         origUrl,
         croppedAreaPixels,
-        Math.max(64, Math.min(2048, outputSize))
+        Math.max(64, Math.min(2048, 512))
       );
       setImage(dataUrl);
       URL.revokeObjectURL(origUrl);
@@ -163,13 +158,17 @@ export default function UpdateProfileForm() {
         setLoading(true);
         const data = await userApi.getProfile();
         const user = data?.user ?? data;
+        const res = await userApi.getRole();
 
         if (!mounted) return;
 
         const parts = (user?.name ?? "").trim().split(/\s+/);
+
+        setImage(res?.profilePicLarge || "");
+        setOriginalImage(res?.profilePicLarge || "");
+
         setFirstName(parts.shift() || "");
         setLastName(parts.join(" "));
-        setImage(user?.image || "");
         setRole(user?.role || null);
         setMobileNumber(user?.mobileNumber || "");
         setId(user?.id ?? null);
@@ -193,6 +192,46 @@ export default function UpdateProfileForm() {
     };
   }, []);
 
+  // auto-hide message after 5 seconds
+  useEffect(() => {
+    // clear previous timeout if any
+    if (messageTimeoutRef.current) {
+      clearTimeout(messageTimeoutRef.current);
+      messageTimeoutRef.current = null;
+    }
+
+    if (message) {
+      const id = window.setTimeout(() => {
+        setMessage(null);
+        messageTimeoutRef.current = null;
+      }, 5000);
+      messageTimeoutRef.current = id;
+    }
+
+    // cleanup when message changes/unmount
+    return () => {
+      if (messageTimeoutRef.current) {
+        clearTimeout(messageTimeoutRef.current);
+        messageTimeoutRef.current = null;
+      }
+    };
+  }, [message]);
+
+  async function uploadProfilePic(imageBase64: string, userId: string) {
+    const res = await fetch("/api/profile/upload", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ imageBase64, userId }),
+    });
+
+    if (!res.ok) {
+      const error = await res.json();
+      throw new Error(error.error || "Upload failed");
+    }
+
+    return res.json();
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setMessage(null);
@@ -200,27 +239,38 @@ export default function UpdateProfileForm() {
     setSubmitting(true);
 
     try {
-      const payload: { name?: string; image?: string; mobileNumber?: string } =
-        {};
+      const payload: { name?: string; mobileNumber?: string } = {};
+
       const fullName = `${firstName} ${lastName}`.trim();
       if (fullName) payload.name = fullName;
-      if (image) payload.image = image;
       if (mobileNumber) payload.mobileNumber = mobileNumber;
 
+      let profilePicUpdated = false;
+
+      // Upload ONLY if user changed image
+      const userChangedImage =
+        image !== originalImage && image.startsWith("data:image");
+
+      if (userChangedImage && id) {
+        await uploadProfilePic(image, id);
+        profilePicUpdated = true;
+      }
+
+      // Update name/mobile in your DB (your existing logic)
       await userApi.updateProfile(payload);
 
-      setMessage("Profile updated successfully.");
-      if (messageTimeoutRef.current) clearTimeout(messageTimeoutRef.current);
-
-      messageTimeoutRef.current = window.setTimeout(() => {
-        setMessage(null);
-      }, 5000);
-    } catch (err: unknown) {
-      if (err instanceof Error) {
-        setError(err.message);
+      // ⭐ Success feedback
+      if (profilePicUpdated) {
+        setMessage(
+          "Profile picture updated. Processing will complete in background."
+        );
+        // update originalImage so subsequent saves without change won't re-upload
+        setOriginalImage(image);
       } else {
-        setError("Failed to update profile");
+        setMessage("Profile updated successfully.");
       }
+    } catch (err: any) {
+      setError(err.message || "Failed to update profile");
     } finally {
       setSubmitting(false);
     }
@@ -406,25 +456,6 @@ export default function UpdateProfileForm() {
                   value={[zoom]}
                   onValueChange={(v) => setZoom(v[0])}
                 />
-              </div>
-
-              {/* Output Size */}
-              <div>
-                <Label>Output Size</Label>
-                <Select
-                  value={String(outputSize)}
-                  onValueChange={(v) => setOutputSize(Number(v))}
-                >
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="128">128</SelectItem>
-                    <SelectItem value="256">256</SelectItem>
-                    <SelectItem value="512">512</SelectItem>
-                    <SelectItem value="1024">1024</SelectItem>
-                  </SelectContent>
-                </Select>
               </div>
 
               <div className="flex justify-end gap-3">

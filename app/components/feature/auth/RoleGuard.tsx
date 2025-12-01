@@ -29,7 +29,9 @@ export default function RoleGuard({
 
       try {
         const data = await userApi.getRole();
-        setUserRole(data.role?.name || null);
+
+        console.log("ROLE GUARD", data);
+        setUserRole(data.role || null);
       } catch (error) {
         console.error("Failed to fetch user role:", error);
       } finally {

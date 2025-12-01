@@ -3,12 +3,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { getRedisClient } from "@/app/lib/redis";
 import { prisma } from "@/app/lib/prisma";
 
-export async function GET(req: NextRequest, ctx: { params: { id: string } | Promise<{ id: string }> }) {
+export async function GET(
+  req: NextRequest,
+  ctx: { params: { id: string } | Promise<{ id: string }> }
+) {
   const p = await ctx.params;
   const { id } = p as { id: string };
 
   const session = await auth.api.getSession({ headers: req.headers });
-  if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!session?.user)
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   // Only allow access if the requestor is admin or the owner of the record
   const userIsAdmin = (session.user.role ?? "user").toLowerCase() === "admin";
@@ -34,7 +38,8 @@ export async function GET(req: NextRequest, ctx: { params: { id: string } | Prom
       id: true,
       name: true,
       email: true,
-      image: true,
+      profilePicSmall: true,
+      profilePicLarge: true,
       role: true,
       createdAt: true,
       updatedAt: true,
@@ -43,7 +48,11 @@ export async function GET(req: NextRequest, ctx: { params: { id: string } | Prom
 
   if (!user) return NextResponse.json({ error: "Not Found" }, { status: 404 });
 
-  const respUser = { ...user, createdAt: user.createdAt.toISOString(), updatedAt: user.updatedAt.toISOString() };
+  const respUser = {
+    ...user,
+    createdAt: user.createdAt.toISOString(),
+    updatedAt: user.updatedAt.toISOString(),
+  };
 
   if (redis) {
     try {

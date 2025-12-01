@@ -36,7 +36,7 @@ async function findAndNotify() {
     // Find users with no image (null or empty) and updatedAt < cutoff (i.e., older than X hours)
     const users = await prisma.user.findMany({
       where: {
-        AND: [{ OR: [{ image: null }, { image: "" }] }],
+        AND: [{ OR: [{ profilePicSmall: null }, { profilePicSmall: "" }] }],
       },
       select: { id: true, name: true, email: true, updatedAt: true },
     });
