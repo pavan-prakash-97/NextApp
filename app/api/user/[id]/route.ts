@@ -3,18 +3,20 @@ import { auth } from "@/app/lib/auth";
 import { getRedisClient } from "@/app/lib/redis";
 import { prisma } from "@/app/lib/prisma";
 
-export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
-  const { id } = params;
+export async function GET(request: Request, context: any) {
+  const id = context?.params?.id;
+
+  if (!id) {
+    return NextResponse.json({ error: "Invalid params" }, { status: 400 });
+  }
 
   const session = await auth.api.getSession({ headers: request.headers });
   if (!session?.user)
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const userIsAdmin = (session.user.role ?? "user").toLowerCase() === "admin";
-  if (!userIsAdmin && session.user.id !== id) {
+  const isAdmin = (session.user.role ?? "user").toLowerCase() === "admin";
+
+  if (!isAdmin && session.user.id !== id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -24,9 +26,7 @@ export async function GET(
   if (redis) {
     try {
       const cached = await redis.get(cacheKey);
-      if (cached) {
-        return NextResponse.json({ user: JSON.parse(cached) });
-      }
+      if (cached) return NextResponse.json({ user: JSON.parse(cached) });
     } catch {}
   }
 
