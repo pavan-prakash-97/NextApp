@@ -40,13 +40,17 @@ export default async function UserList() {
   if (redis) {
     try {
       const cached = await redis.get(cacheKey);
-      if (cached) users = JSON.parse(cached) as CachedUser[];
+      if (cached) {
+        users = JSON.parse(cached) as CachedUser[];
+        console.log("Inside cached");
+      }
     } catch {
       // ignore
     }
   }
 
   if (!users || users.length === 0) {
+    console.log("Inside DB call");
     const fetched = await prisma.user.findMany({
       orderBy: { createdAt: "desc" },
       select: {
@@ -54,14 +58,12 @@ export default async function UserList() {
         name: true,
         email: true,
         image: true,
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore: Prisma client may need to be regenerated to include mobileNumber
         mobileNumber: true,
         role: true,
         createdAt: true,
         updatedAt: true,
       },
-  });
+    });
 
     users = fetched.map((u) => ({
       ...u,

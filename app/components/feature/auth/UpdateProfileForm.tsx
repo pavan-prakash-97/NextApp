@@ -255,12 +255,14 @@ export default function UpdateProfileForm() {
                   }`}
                 >
                   <input
+                    data-testid="file-input"
                     ref={fileInputRef}
                     type="file"
                     accept="image/*"
                     className="hidden"
                     onChange={onFileChange}
                   />
+
                   {image ? (
                     <img
                       src={image}
@@ -298,24 +300,27 @@ export default function UpdateProfileForm() {
             {/* Editable fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <Label>First name</Label>
+                <Label htmlFor="firstName">First name</Label>
                 <Input
+                  id="firstName"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
 
               <div>
-                <Label>Last name</Label>
+                <Label htmlFor="lastName">Last name</Label>
                 <Input
+                  id="lastName"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
 
               <div>
-                <Label>Mobile number</Label>
+                <Label htmlFor="mobileNumber">Mobile number</Label>
                 <Input
+                  id="mobileNumber"
                   value={mobileNumber}
                   onChange={(e) => setMobileNumber(e.target.value)}
                   placeholder="+91 0123456789"
