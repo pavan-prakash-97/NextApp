@@ -95,14 +95,17 @@ export default function SignupForm() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        <label className="text-sm font-medium">Name</label>
+        <label htmlFor="name" className="text-sm font-medium">
+          Name
+        </label>
         <input
+          id="name"
           type="text"
           className="
-            w-full border border-gray-300 rounded-full p-3 mt-1 
-            focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400
-            transition-all duration-150
-          "
+        w-full border border-gray-300 rounded-full p-3 mt-1 
+        focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400
+        transition-all duration-150
+      "
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -115,14 +118,17 @@ export default function SignupForm() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        <label className="text-sm font-medium">Email</label>
+        <label htmlFor="email" className="text-sm font-medium">
+          Email
+        </label>
         <input
+          id="email"
           type="email"
           className="
-            w-full border border-gray-300 rounded-full p-3 mt-1 
-            focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400
-            transition-all duration-150
-          "
+        w-full border border-gray-300 rounded-full p-3 mt-1 
+        focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400
+        transition-all duration-150
+      "
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -135,20 +141,22 @@ export default function SignupForm() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.25 }}
       >
-        <label className="text-sm font-medium">Mobile number</label>
+        <label htmlFor="mobileNumber" className="text-sm font-medium">
+          Mobile number
+        </label>
         <input
+          id="mobileNumber"
           type="tel"
           className="
-            w-full border border-gray-300 rounded-full p-3 mt-1 
-            focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400
-            transition-all duration-150
-          "
+        w-full border border-gray-300 rounded-full p-3 mt-1 
+        focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400
+        transition-all duration-150
+      "
           value={mobileNumber}
           onChange={(e) => {
-            const val = e.target.value.replace(/^\+91\s?/, ""); // remove +91 prefix only once
+            const val = e.target.value.replace(/^\+91\s?/, "");
             setMobileNumber(val);
           }}
-          // onChange={(e) => setMobileNumber(e.target.value)}
           placeholder="+91 0123456789"
           required
         />
@@ -160,15 +168,18 @@ export default function SignupForm() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
-        <label className="text-sm font-medium">Password</label>
+        <label htmlFor="password" className="text-sm font-medium">
+          Password
+        </label>
         <div className="relative">
           <input
+            id="password"
             type={showPassword ? "text" : "password"}
             className="
-            w-full border border-gray-300 rounded-full p-3 mt-1 
-            focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400
-            transition-all duration-150
-          "
+        w-full border border-gray-300 rounded-full p-3 mt-1 
+        focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400
+        transition-all duration-150
+      "
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -226,9 +237,9 @@ export default function SignupForm() {
         type="submit"
         disabled={loading}
         className="
-          w-full bg-gray-800 text-white py-3 mt-3 rounded-full shadow-md 
-          hover:bg-indigo-700 transition disabled:opacity-60
-        "
+      w-full bg-gray-800 text-white py-3 mt-3 rounded-full shadow-md 
+      hover:bg-indigo-700 transition disabled:opacity-60
+    "
       >
         {loading ? "Creating account..." : "Sign Up"}
       </motion.button>
