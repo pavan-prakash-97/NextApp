@@ -6,11 +6,14 @@
   "scripts": {
     "dev": "next dev",
     "cron:avatar-reminder": "tsx ./scripts/cron/no-avatar-reminder.ts",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "eslint",
     "test:redis": "tsx ./scripts/test-redis.ts",
     "test": "jest"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
   },
   "dependencies": {
     "@auth/core": "^0.34.3",
