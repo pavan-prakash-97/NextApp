@@ -31,11 +31,12 @@ export default function LoginForm() {
         return;
       }
 
-      const data = await userApi.getRole();
+      // const data = await userApi.getRole();
+      const data = await userApi.getProfile();
 
-      if (data.role === "admin") {
+      if (data.user.role === "admin") {
         router.push("/admin");
-      } else if (data.role === "user") {
+      } else if (data.user.role === "user") {
         router.push("/user");
       } else {
         router.push("/user");

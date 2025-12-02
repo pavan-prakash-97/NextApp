@@ -9,7 +9,6 @@ import { getRedisClient } from "@/app/lib/redis";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-
 type CachedUser = {
   id: string;
   name?: string | null;

@@ -18,41 +18,39 @@ import {
 } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
+import { useUser } from "@/app/context/userContext";
 
 export default function UpdateProfileForm() {
+  const { user, refreshUser } = useUser();
+
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [image, setImage] = useState<string>(""); // what is displayed in <img>
   const [originalImage, setOriginalImage] = useState<string>(""); // DB version
-
+  const [id, setId] = useState<string | null>(null);
+  const [email, setEmail] = useState<string | null>(null);
+  const [role, setRole] = useState<string | null>(null);
+  const [createdAt, setCreatedAt] = useState<string | null>(null);
+  const [updatedAt, setUpdatedAt] = useState<string | null>(null);
   const [mobileNumber, setMobileNumber] = useState<string>("");
+
   const [loading, setLoading] = useState<boolean>(true);
   const [submitting, setSubmitting] = useState<boolean>(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const [id, setId] = useState<string | null>(null);
-  const [email, setEmail] = useState<string | null>(null);
-  const [role, setRole] = useState<string | null>(null);
-
-  const [createdAt, setCreatedAt] = useState<string | null>(null);
-  const [updatedAt, setUpdatedAt] = useState<string | null>(null);
-
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const messageTimeoutRef = useRef<number | null>(null);
 
-  // const [origFile, setOrigFile] = useState<File | null>(null);
   const [origUrl, setOrigUrl] = useState<string | null>(null);
 
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState<number>(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
-  // const [outputSize, setOutputSize] = useState<number>(512);
 
   const [processing, setProcessing] = useState<boolean>(false);
   const [showCropModal, setShowCropModal] = useState<boolean>(false);
-  const origImageRef = useRef<HTMLImageElement | null>(null);
 
   const handleFile = (file?: File | null) => {
     if (!file) return;
@@ -157,16 +155,13 @@ export default function UpdateProfileForm() {
     const loadProfile = async () => {
       try {
         setLoading(true);
-        const data = await userApi.getProfile();
-        const user = data?.user ?? data;
-        const res = await userApi.getRole();
 
         if (!mounted) return;
 
         const parts = (user?.name ?? "").trim().split(/\s+/);
 
-        setImage(res?.profilePicLarge || "");
-        setOriginalImage(res?.profilePicLarge || "");
+        setImage(user?.profilePicLarge || "");
+        setOriginalImage(user?.profilePicLarge || "");
 
         setFirstName(parts.shift() || "");
         setLastName(parts.join(" "));
@@ -191,7 +186,7 @@ export default function UpdateProfileForm() {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [user]);
 
   // auto-hide message after 5 seconds
   useEffect(() => {
@@ -259,6 +254,9 @@ export default function UpdateProfileForm() {
 
       // Update name/mobile in your DB (your existing logic)
       await userApi.updateProfile(payload);
+
+      // ⭐ refresh global user context so sidebar/topbar updates
+      await refreshUser();
 
       // ⭐ Success feedback
       if (profilePicUpdated) {
