@@ -1,17 +1,16 @@
 "use client";
 
-import { userApi } from "@/app/lib/api-client";
-import { signOut, useSession } from "@/app/lib/auth-client";
+import { signOut } from "@/app/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { useUser } from "@/app/context/userContext";
 
 export default function Topbar() {
-  const { data: session } = useSession();
-  const user = session?.user;
+  const { user } = useUser();
   const router = useRouter();
 
-  const [image, setImage] = useState<string>("");
+  console.log("TOPBAR USER", user);
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -35,22 +34,6 @@ export default function Topbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  useEffect(() => {
-    async function fetchRole() {
-      if (!session?.user?.id) return;
-      try {
-        const res = await userApi.getRole();
-
-        if (res) {
-          setImage(res?.profilePicSmall);
-        }
-      } catch (error) {
-        console.error("Failed to fetch role:", error);
-      }
-    }
-    fetchRole();
-  }, [session]);
-
   return (
     <header className="w-full h-16 border-b shadow-sm flex items-center justify-between px-6 bg-gray-800">
       <h1 className="text-2xl text-[#FFF] font-semibold">Next App</h1>
@@ -61,9 +44,9 @@ export default function Topbar() {
             onClick={() => setOpen((prev) => !prev)}
             className="flex items-center gap-3 cursor-pointer"
           >
-            {image ? (
+            {user.profilePicSmall ? (
               <Image
-                src={image} // fallback so Image never crashes
+                src={user.profilePicSmall} // fallback so Image never crashes
                 alt="User avatar"
                 width={40}
                 height={40}

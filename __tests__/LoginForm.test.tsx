@@ -21,6 +21,7 @@ jest.mock("@/app/lib/auth-client", () => ({
 
 jest.mock("@/app/lib/api-client", () => ({
   userApi: {
+    getProfile: jest.fn(), // IMPORTANT
     getRole: jest.fn(),
   },
 }));
@@ -74,7 +75,10 @@ describe("LoginForm Component", () => {
 
   test("successful login → admin navigates to /admin", async () => {
     (signIn.email as jest.Mock).mockResolvedValue({ error: null });
-    (userApi.getRole as jest.Mock).mockResolvedValue({ role: { name: "admin" } });
+
+    (userApi.getProfile as jest.Mock).mockResolvedValue({
+      user: { role: "admin" },
+    });
 
     render(<LoginForm />);
 
@@ -94,7 +98,10 @@ describe("LoginForm Component", () => {
 
   test("successful login → normal user navigates to /user", async () => {
     (signIn.email as jest.Mock).mockResolvedValue({ error: null });
-    (userApi.getRole as jest.Mock).mockResolvedValue({ role: { name: "user" } });
+
+    (userApi.getProfile as jest.Mock).mockResolvedValue({
+      user: { role: "user" },
+    });
 
     render(<LoginForm />);
 
