@@ -2,12 +2,14 @@ import { z } from "zod";
 
 // User profile update schema
 export const updateUserProfileSchema = z.object({
-  name: z.string().min(1, "Name is required").max(100, "Name is too long").optional(),
-  image: z.string().url("Invalid image URL").optional(),
-  mobileNumber: z
+  name: z
     .string()
-    .regex(/^\+[1-9]\d{1,14}$/, "Invalid phone number; use E.164 format e.g. +15551234567")
+    .min(1, "Name is required")
+    .max(100, "Name is too long")
     .optional(),
+  profilePicSmall: z.string().url("Invalid image URL").optional(),
+  profilePicLarge: z.string().url("Invalid image URL").optional(),
+  mobileNumber: z.string().optional(),
 });
 
 export type UpdateUserProfileInput = z.infer<typeof updateUserProfileSchema>;

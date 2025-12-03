@@ -1,14 +1,16 @@
 "use client";
 
-import { signOut, useSession } from "@/app/lib/auth-client";
+import { signOut } from "@/app/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
+import { useUser } from "@/app/context/userContext";
 
 export default function Topbar() {
-  const { data: session } = useSession();
-  const user = session?.user;
+  const { user } = useUser();
   const router = useRouter();
 
+  console.log("TOPBAR USER", user);
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -20,7 +22,10 @@ export default function Topbar() {
   // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setOpen(false);
       }
     }
@@ -39,10 +44,12 @@ export default function Topbar() {
             onClick={() => setOpen((prev) => !prev)}
             className="flex items-center gap-3 cursor-pointer"
           >
-            {user.image ? (
-              <img
-                src={user.image}
-                alt={user.name ?? "avatar"}
+            {user.profilePicSmall ? (
+              <Image
+                src={user.profilePicSmall} // fallback so Image never crashes
+                alt="User avatar"
+                width={40}
+                height={40}
                 className="h-10 w-10 rounded-full object-cover border"
               />
             ) : (

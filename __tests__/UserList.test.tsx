@@ -4,9 +4,9 @@
 
 import { render, screen } from "@testing-library/react";
 import { auth } from "@/app/lib/auth";
-import { prisma } from "@/app/lib/prisma";
 import { getRedisClient } from "@/app/lib/redis";
 import UserList from "@/app/components/feature/admin/UserList";
+import { prisma } from "@/app/lib/prisma";
 
 // -----------------------
 // TYPE SAFE MOCKS

@@ -1,31 +1,14 @@
 "use client";
 
+import { useUser } from "@/app/context/userContext";
 import Link from "next/link";
-import { useSession } from "@/app/lib/auth-client";
-import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
-  const { data: session } = useSession();
-  const [role, setRole] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function fetchRole() {
-      if (!session?.user?.id) return;
-      try {
-        const res = await fetch("/api/user/role");
-        if (res.ok) {
-          const data = await res.json();
-          setRole(data.role?.name || null);
-        }
-      } catch (error) {
-        console.error("Failed to fetch role:", error);
-      }
-    }
-    fetchRole();
-  }, [session]);
-
+  const { user } = useUser();
   const pathname = usePathname();
+
+  console.log("TOPBAR USER", user);
 
   const getLinkClass = (href: string, exact = false) => {
     const isActive = exact ? pathname === href : pathname?.startsWith(href);
@@ -41,7 +24,7 @@ export default function Sidebar() {
       <h2 className="text-xl font-semibold text-[#FFF] mb-6">Dashboard</h2>
 
       <nav className="space-y-2">
-        {role === "admin" && (
+        {user?.role === "admin" && (
           <Link
             href="/admin"
             className={getLinkClass("/admin", true)}
@@ -51,7 +34,7 @@ export default function Sidebar() {
           </Link>
         )}
 
-        {role === "admin" && (
+        {user?.role === "admin" && (
           <Link
             href="/admin/users"
             className={getLinkClass("/admin/users")}
@@ -63,7 +46,7 @@ export default function Sidebar() {
           </Link>
         )}
 
-        {["user"].includes(role ?? "") && (
+        {["user"].includes(user?.role ?? "") && (
           <Link
             href="/user"
             className={getLinkClass("/user")}

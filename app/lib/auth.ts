@@ -35,7 +35,7 @@ export const auth = betterAuth({
       },
       mobileNumber: {
         type: "string",
-        required: true,
+        required: false, // set to false, your DB says null allowed
       },
     },
   },

@@ -3,8 +3,8 @@ export interface User {
   id: string;
   name?: string | null;
   email: string;
-  emailVerified?: Date | null;
-  image?: string | null;
+  profilePicSmall?: string | null;
+  profilePicLarge?: string | null;
   password?: string | null;
   roleId: string;
   createdAt: Date;

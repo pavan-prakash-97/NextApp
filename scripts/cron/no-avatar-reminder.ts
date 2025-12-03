@@ -9,8 +9,12 @@ import { logInfo, logError } from "../../app/lib/logger-helpers";
 const PERSIST_FILE = path.resolve(__dirname, "avatar-reminders.json");
 const DEFAULT_HOURS = Number(process.env.AVATAR_REMINDER_AFTER_HOURS ?? "24");
 const HOURS_BETWEEN_REMINDERS = Math.max(1, DEFAULT_HOURS);
-const MINUTES_INTERVAL = Number(process.env.AVATAR_REMINDER_INTERVAL_MINUTES ?? "");
-const HOURS_INTERVAL = Number(process.env.AVATAR_REMINDER_INTERVAL_HOURS ?? `${HOURS_BETWEEN_REMINDERS}`);
+const MINUTES_INTERVAL = Number(
+  process.env.AVATAR_REMINDER_INTERVAL_MINUTES ?? ""
+);
+const HOURS_INTERVAL = Number(
+  process.env.AVATAR_REMINDER_INTERVAL_HOURS ?? `${HOURS_BETWEEN_REMINDERS}`
+);
 
 type ReminderDB = Record<string, string>; // userId -> ISO string timestamp
 
@@ -36,7 +40,7 @@ async function findAndNotify() {
     // Find users with no image (null or empty) and updatedAt < cutoff (i.e., older than X hours)
     const users = await prisma.user.findMany({
       where: {
-        AND: [{ OR: [{ image: null }, { image: "" }] }],
+        AND: [{ OR: [{ profilePicSmall: null }, { profilePicSmall: "" }] }],
       },
       select: { id: true, name: true, email: true, updatedAt: true },
     });
@@ -136,7 +140,9 @@ async function findAndNotify() {
       }
     }
   } catch (err: unknown) {
-    logError((err as Error) ?? new Error(String(err)), { context: "cron:no-avatar-reminder" });
+    logError((err as Error) ?? new Error(String(err)), {
+      context: "cron:no-avatar-reminder",
+    });
   }
 }
 
@@ -148,20 +154,31 @@ if (HOURS_INTERVAL && HOURS_INTERVAL > 0) {
   intervalExpr = `*/${Math.max(1, MINUTES_INTERVAL)} * * * *`;
 }
 
-const task = cron.schedule(intervalExpr, async () => {
-  logInfo("Cron (no-avatar-reminder) triggered");
-  // Also console.log so users running directly see output without log files
-  console.log(new Date().toISOString(), "Cron (no-avatar-reminder) triggered");
-  await findAndNotify();
-}, { scheduled: true, timezone: process.env.CRON_TIMEZONE ?? undefined });
+const task = cron.schedule(
+  intervalExpr,
+  async () => {
+    logInfo("Cron (no-avatar-reminder) triggered");
+    // Also console.log so users running directly see output without log files
+    console.log(
+      new Date().toISOString(),
+      "Cron (no-avatar-reminder) triggered"
+    );
+    await findAndNotify();
+  },
+  { scheduled: true, timezone: process.env.CRON_TIMEZONE ?? undefined }
+);
 
 // Ensure it's started
 task.start();
 logInfo(`Cron scheduled with expression: ${intervalExpr}`);
-console.log(`Cron (no-avatar-reminder) scheduled with expression: ${intervalExpr}`);
+console.log(
+  `Cron (no-avatar-reminder) scheduled with expression: ${intervalExpr}`
+);
 
 // run once immediately
-findAndNotify().catch((err) => logError(err as Error, { context: "initial-run" }));
+findAndNotify().catch((err) =>
+  logError(err as Error, { context: "initial-run" })
+);
 
 // Keep the process alive when running directly
 if (require.main === module) {

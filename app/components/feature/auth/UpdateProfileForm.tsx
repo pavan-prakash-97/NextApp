@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Cropper from "react-easy-crop";
 import type { Area } from "react-easy-crop";
 import { userApi } from "@/app/lib/api-client";
+import NextImage from "next/image";
 
 // ⬇️ shadcn/ui components
 import { Button } from "@/components/ui/button";
@@ -17,46 +18,39 @@ import {
 } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
+import { useUser } from "@/app/context/userContext";
 
 export default function UpdateProfileForm() {
+  const { user, refreshUser } = useUser();
+
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
-  const [image, setImage] = useState<string>("");
+  const [image, setImage] = useState<string>(""); // what is displayed in <img>
+  const [originalImage, setOriginalImage] = useState<string>(""); // DB version
+  const [id, setId] = useState<string | null>(null);
+  const [email, setEmail] = useState<string | null>(null);
+  const [role, setRole] = useState<string | null>(null);
+  const [createdAt, setCreatedAt] = useState<string | null>(null);
+  const [updatedAt, setUpdatedAt] = useState<string | null>(null);
   const [mobileNumber, setMobileNumber] = useState<string>("");
+
   const [loading, setLoading] = useState<boolean>(true);
   const [submitting, setSubmitting] = useState<boolean>(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const [id, setId] = useState<string | null>(null);
-  const [email, setEmail] = useState<string | null>(null);
-  const [role, setRole] = useState<string | null>(null);
-
-  const [createdAt, setCreatedAt] = useState<string | null>(null);
-  const [updatedAt, setUpdatedAt] = useState<string | null>(null);
-
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const messageTimeoutRef = useRef<number | null>(null);
 
-  // const [origFile, setOrigFile] = useState<File | null>(null);
   const [origUrl, setOrigUrl] = useState<string | null>(null);
 
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState<number>(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
-  const [outputSize, setOutputSize] = useState<number>(512);
 
   const [processing, setProcessing] = useState<boolean>(false);
   const [showCropModal, setShowCropModal] = useState<boolean>(false);
-  const origImageRef = useRef<HTMLImageElement | null>(null);
 
   const handleFile = (file?: File | null) => {
     if (!file) return;
@@ -94,7 +88,7 @@ export default function UpdateProfileForm() {
     new Promise<HTMLImageElement>((resolve, reject) => {
       const img = new Image();
       img.addEventListener("load", () => resolve(img));
-      img.addEventListener("error", (err) => reject(err));
+      img.addEventListener("error", (err: any) => reject(err));
       img.setAttribute("crossOrigin", "anonymous");
       img.src = url;
     });
@@ -134,7 +128,7 @@ export default function UpdateProfileForm() {
       const dataUrl = await getCroppedImg(
         origUrl,
         croppedAreaPixels,
-        Math.max(64, Math.min(2048, outputSize))
+        Math.max(64, Math.min(2048, 512))
       );
       setImage(dataUrl);
       URL.revokeObjectURL(origUrl);
@@ -161,15 +155,16 @@ export default function UpdateProfileForm() {
     const loadProfile = async () => {
       try {
         setLoading(true);
-        const data = await userApi.getProfile();
-        const user = data?.user ?? data;
 
         if (!mounted) return;
 
         const parts = (user?.name ?? "").trim().split(/\s+/);
+
+        setImage(user?.profilePicLarge || "");
+        setOriginalImage(user?.profilePicLarge || "");
+
         setFirstName(parts.shift() || "");
         setLastName(parts.join(" "));
-        setImage(user?.image || "");
         setRole(user?.role || null);
         setMobileNumber(user?.mobileNumber || "");
         setId(user?.id ?? null);
@@ -191,7 +186,47 @@ export default function UpdateProfileForm() {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [user]);
+
+  // auto-hide message after 5 seconds
+  useEffect(() => {
+    // clear previous timeout if any
+    if (messageTimeoutRef.current) {
+      clearTimeout(messageTimeoutRef.current);
+      messageTimeoutRef.current = null;
+    }
+
+    if (message) {
+      const id = window.setTimeout(() => {
+        setMessage(null);
+        messageTimeoutRef.current = null;
+      }, 5000);
+      messageTimeoutRef.current = id;
+    }
+
+    // cleanup when message changes/unmount
+    return () => {
+      if (messageTimeoutRef.current) {
+        clearTimeout(messageTimeoutRef.current);
+        messageTimeoutRef.current = null;
+      }
+    };
+  }, [message]);
+
+  async function uploadProfilePic(imageBase64: string, userId: string) {
+    const res = await fetch("/api/profile/upload", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ imageBase64, userId }),
+    });
+
+    if (!res.ok) {
+      const error = await res.json();
+      throw new Error(error.error || "Upload failed");
+    }
+
+    return res.json();
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -200,27 +235,41 @@ export default function UpdateProfileForm() {
     setSubmitting(true);
 
     try {
-      const payload: { name?: string; image?: string; mobileNumber?: string } =
-        {};
+      const payload: { name?: string; mobileNumber?: string } = {};
+
       const fullName = `${firstName} ${lastName}`.trim();
       if (fullName) payload.name = fullName;
-      if (image) payload.image = image;
       if (mobileNumber) payload.mobileNumber = mobileNumber;
 
+      let profilePicUpdated = false;
+
+      // Upload ONLY if user changed image
+      const userChangedImage =
+        image !== originalImage && image.startsWith("data:image");
+
+      if (userChangedImage && id) {
+        await uploadProfilePic(image, id);
+        profilePicUpdated = true;
+      }
+
+      // Update name/mobile in your DB (your existing logic)
       await userApi.updateProfile(payload);
 
-      setMessage("Profile updated successfully.");
-      if (messageTimeoutRef.current) clearTimeout(messageTimeoutRef.current);
+      // ⭐ refresh global user context so sidebar/topbar updates
+      await refreshUser();
 
-      messageTimeoutRef.current = window.setTimeout(() => {
-        setMessage(null);
-      }, 5000);
-    } catch (err: unknown) {
-      if (err instanceof Error) {
-        setError(err.message);
+      // ⭐ Success feedback
+      if (profilePicUpdated) {
+        setMessage(
+          "Profile picture updated. Processing will complete in background."
+        );
+        // update originalImage so subsequent saves without change won't re-upload
+        setOriginalImage(image);
       } else {
-        setError("Failed to update profile");
+        setMessage("Profile updated successfully.");
       }
+    } catch (err: any) {
+      setError(err.message || "Failed to update profile");
     } finally {
       setSubmitting(false);
     }
@@ -264,11 +313,14 @@ export default function UpdateProfileForm() {
                   />
 
                   {image ? (
-                    <img
-                      src={image}
-                      alt="avatar"
-                      className="h-full w-full object-cover"
-                    />
+                    <div className="relative h-24 w-24 rounded-full overflow-hidden">
+                      <NextImage
+                        src={image}
+                        alt="avatar"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   ) : (
                     <div className="h-full w-full flex items-center justify-center bg-gray-100">
                       <span className="text-gray-400 text-sm">No image</span>
@@ -332,12 +384,15 @@ export default function UpdateProfileForm() {
             {origUrl && (
               <div className="p-4 border rounded bg-gray-50">
                 <div className="flex gap-6 items-start">
-                  <img
-                    src={origUrl}
-                    alt="preview"
-                    className="h-40 w-40 border rounded object-contain"
-                    ref={origImageRef}
-                  />
+                  <div className="relative h-40 w-40 border rounded overflow-hidden">
+                    <NextImage
+                      src={origUrl}
+                      alt="preview"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+
                   <div className="flex-1 text-sm text-gray-600">
                     Crop modal will open where you can adjust the image.
                   </div>
@@ -406,25 +461,6 @@ export default function UpdateProfileForm() {
                   value={[zoom]}
                   onValueChange={(v) => setZoom(v[0])}
                 />
-              </div>
-
-              {/* Output Size */}
-              <div>
-                <Label>Output Size</Label>
-                <Select
-                  value={String(outputSize)}
-                  onValueChange={(v) => setOutputSize(Number(v))}
-                >
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="128">128</SelectItem>
-                    <SelectItem value="256">256</SelectItem>
-                    <SelectItem value="512">512</SelectItem>
-                    <SelectItem value="1024">1024</SelectItem>
-                  </SelectContent>
-                </Select>
               </div>
 
               <div className="flex justify-end gap-3">

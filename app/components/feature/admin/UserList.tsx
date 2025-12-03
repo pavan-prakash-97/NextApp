@@ -13,7 +13,8 @@ type CachedUser = {
   id: string;
   name?: string | null;
   email?: string | null;
-  image?: string | null;
+  profilePicLarge?: string | null;
+  profilePicSmall?: string | null;
   role?: string | null;
   mobileNumber?: string | null;
   createdAt: string;
@@ -57,7 +58,8 @@ export default async function UserList() {
         id: true,
         name: true,
         email: true,
-        image: true,
+        profilePicLarge: true,
+        profilePicSmall: true,
         mobileNumber: true,
         role: true,
         createdAt: true,
@@ -65,7 +67,7 @@ export default async function UserList() {
       },
     });
 
-    users = fetched.map((u) => ({
+    users = fetched.map((u: any) => ({
       ...u,
       createdAt: u.createdAt.toISOString(),
       updatedAt: u.updatedAt.toISOString(),
@@ -114,9 +116,12 @@ export default async function UserList() {
               {otherUsers.map((u) => (
                 <tr key={u.id} className="hover:bg-gray-50">
                   <td className="px-4 py-3 flex items-center gap-3">
-                    {u.image ? (
+                    {u.profilePicSmall ? (
                       <Avatar>
-                        <AvatarImage src={u.image} alt={u.name ?? "avatar"} />
+                        <AvatarImage
+                          src={u.profilePicSmall}
+                          alt={u.name ?? "avatar"}
+                        />
                         <AvatarFallback>
                           {(u.name ?? "").slice(0, 2)}
                         </AvatarFallback>

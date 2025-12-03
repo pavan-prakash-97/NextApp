@@ -23,19 +23,27 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
-    logInfo("User role retrieved", {
+    logInfo("User role and profile pics retrieved", {
       userId: session.user.id,
       role: user.role,
+      profilePicSmall: user.profilePicSmall,
+      profilePicLarge: user.profilePicLarge,
     });
 
     return NextResponse.json({
-      role: { name: user.role },
+      role: user.role,
+      profilePicSmall: user.profilePicSmall,
+      profilePicLarge: user.profilePicLarge,
     });
   } catch (error) {
     logError(error as Error, {
       userId: session.user.id,
       endpoint: "GET /api/user/role",
     });
-    return NextResponse.json({ error: "Failed to fetch user role" }, { status: 500 });
+
+    return NextResponse.json(
+      { error: "Failed to fetch user details" },
+      { status: 500 }
+    );
   }
 }

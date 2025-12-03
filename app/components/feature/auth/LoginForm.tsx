@@ -22,7 +22,7 @@ export default function LoginForm() {
       const { error } = await signIn.email({
         email,
         password,
-        callbackURL: "/user",
+        // callbackURL: "/user",
       });
 
       if (error) {
@@ -31,11 +31,14 @@ export default function LoginForm() {
         return;
       }
 
-      try {
-        const { role } = await userApi.getRole();
-        if (role?.name === "admin") router.push("/admin");
-        else router.push("/user");
-      } catch {
+      // const data = await userApi.getRole();
+      const data = await userApi.getProfile();
+
+      if (data.user.role === "admin") {
+        router.push("/admin");
+      } else if (data.user.role === "user") {
+        router.push("/user");
+      } else {
         router.push("/user");
       }
     } catch (err) {
