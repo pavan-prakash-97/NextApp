@@ -8,6 +8,7 @@ import { getRedisClient } from "@/app/lib/redis";
 // shadcn/ui components (assumes these exports exist in your project)
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { adminApi } from "@/app/lib/api-client";
 
 type CachedUser = {
   id: string;
@@ -40,6 +41,8 @@ export default async function UserList() {
 
   if (redis) {
     try {
+      const data = adminApi.getUsers();
+      console.log("data0007>>>", data);
       const cached = await redis.get(cacheKey);
       if (cached) {
         users = JSON.parse(cached) as CachedUser[];
@@ -52,6 +55,8 @@ export default async function UserList() {
 
   if (!users || users.length === 0) {
     console.log("Inside DB call");
+    const data = adminApi.getUsers();
+    console.log("data>>>", data);
     const fetched = await prisma.user.findMany({
       orderBy: { createdAt: "desc" },
       select: {

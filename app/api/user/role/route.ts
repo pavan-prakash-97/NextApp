@@ -1,7 +1,7 @@
-import { auth } from "@/app/lib/auth";
-import { getUserWithRole } from "@/app/lib/auth";
+import { auth, getUserRole } from "@/app/lib/auth";
 import { NextRequest, NextResponse } from "next/server";
 import { logInfo, logError } from "@/app/lib/logger-helpers";
+import * as Sentry from "@sentry/nextjs";
 
 export async function GET(req: NextRequest) {
   const session = await auth.api.getSession({
@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const user = await getUserWithRole(session.user.id);
+    const user = await getUserRole(session.user.id);
 
     if (!user) {
       logInfo("User not found", { userId: session.user.id });
@@ -26,16 +26,14 @@ export async function GET(req: NextRequest) {
     logInfo("User role and profile pics retrieved", {
       userId: session.user.id,
       role: user.role,
-      profilePicSmall: user.profilePicSmall,
-      profilePicLarge: user.profilePicLarge,
     });
 
     return NextResponse.json({
       role: user.role,
-      profilePicSmall: user.profilePicSmall,
-      profilePicLarge: user.profilePicLarge,
     });
   } catch (error) {
+    Sentry.captureException(error);
+
     logError(error as Error, {
       userId: session.user.id,
       endpoint: "GET /api/user/role",

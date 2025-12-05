@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import { logError, logInfo } from "./logger-helpers";
+import * as Sentry from "@sentry/nextjs";
 
 // Create reusable transporter
 const transporter = nodemailer.createTransport({
@@ -15,6 +16,7 @@ const transporter = nodemailer.createTransport({
 // Verify transporter configuration
 transporter.verify((error) => {
   if (error) {
+    Sentry.captureException(error);
     logError(error, { context: "Email transporter verification failed" });
   } else {
     logInfo("Email transporter is ready");

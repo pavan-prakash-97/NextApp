@@ -22,6 +22,15 @@ export const userApi = {
   },
 };
 
+export const adminApi = {
+  // Get users list
+  getUsers: async () => {
+    const response = await axiosInstance.get("/api/admin");
+    return response;
+  },
+};
+
+
 // Generic API helper
 export const api = {
   get: async <T = unknown>(url: string, config?: AxiosRequestConfig) => {

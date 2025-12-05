@@ -26,3 +26,6 @@ next-debug.log*
 .eslintcache
 .next/cache
 .vercel/
+
+# Sentry Config File
+.env.sentry-build-plugin

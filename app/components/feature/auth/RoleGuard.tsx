@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useSession } from "@/app/lib/auth-client";
 import { useRouter, usePathname } from "next/navigation";
 import { userApi } from "@/app/lib/api-client";
-
+import * as Sentry from "@sentry/nextjs";
 export default function RoleGuard({
   roles,
   children,
@@ -29,10 +29,9 @@ export default function RoleGuard({
 
       try {
         const data = await userApi.getRole();
-
-        console.log("ROLE GUARD", data);
         setUserRole(data.role || null);
       } catch (error) {
+        Sentry.captureException(error);
         console.error("Failed to fetch user role:", error);
       } finally {
         setIsLoading(false);
@@ -76,14 +75,13 @@ export default function RoleGuard({
   }, [userRole, isLoading, isPending, router, pathname, roles]);
 
   // Don't render children during redirect
-if (isPending || isLoading) {
-  return (
-    <div className="fixed inset-0 flex items-center justify-center bg-transparent z-50">
-      <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-    </div>
-  );
-}
-
+  if (isPending || isLoading) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-transparent z-50">
+        <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   if (!userRole || !roles.includes(userRole)) {
     return null;

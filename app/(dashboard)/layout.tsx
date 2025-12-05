@@ -11,8 +11,6 @@ export default async function DashboardLayout({
 }) {
   const user = await getCurrentUserServer(await headers());
 
-  console.log("DASHBOARD", user);
-
   return (
     <UserProvider user={user}>
       <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-700 to-black">
