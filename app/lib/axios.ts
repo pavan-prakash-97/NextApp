@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import * as Sentry from "@sentry/nextjs";
 // Create axios instance with default config
 export const axiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
@@ -22,6 +22,7 @@ axiosInstance.interceptors.request.use(
     return config;
   },
   (error) => {
+    Sentry.captureException(error);
     console.error("Request interceptor error:", error);
     return Promise.reject(error);
   }
@@ -45,6 +46,7 @@ axiosInstance.interceptors.response.use(
       message: error.response?.data?.error || error.message,
     };
 
+    Sentry.captureException(error);
     console.error("API Response Error:", errorData);
 
     // Handle specific error cases

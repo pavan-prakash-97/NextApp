@@ -7,6 +7,7 @@ import { prisma } from "@/app/lib/prisma";
 import { logInfo, logError } from "@/app/lib/logger-helpers";
 import { getRedisClient } from "@/app/lib/redis";
 import { sendProfileUpdateEmail } from "@/app/lib/email";
+import * as Sentry from "@sentry/nextjs";
 
 // Get current user
 export async function GET(req: NextRequest) {
@@ -150,6 +151,7 @@ export async function PATCH(req: NextRequest) {
       data: updatedUser,
     });
   } catch (error) {
+    Sentry.captureException(error);
     logError(error as Error, {
       userId: session.user.id,
       endpoint: "PATCH /api/user",

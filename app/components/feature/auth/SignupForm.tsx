@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { signUp } from "@/app/lib/auth-client";
+import * as Sentry from "@sentry/nextjs";
 
 export default function SignupForm() {
   const [name, setName] = useState("");
@@ -54,6 +55,7 @@ export default function SignupForm() {
       } as SignUpPayload);
 
       if (error) {
+        Sentry.captureException(error);
         alert(error.message || "Signup failed");
         setLoading(false);
         return;

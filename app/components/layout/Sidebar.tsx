@@ -8,8 +8,6 @@ export default function Sidebar() {
   const { user } = useUser();
   const pathname = usePathname();
 
-  console.log("TOPBAR USER", user);
-
   const getLinkClass = (href: string, exact = false) => {
     const isActive = exact ? pathname === href : pathname?.startsWith(href);
     return `block p-2 rounded transition-colors ${

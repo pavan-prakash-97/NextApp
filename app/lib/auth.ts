@@ -42,7 +42,7 @@ export const auth = betterAuth({
 });
 
 // Helper function to get user with role from database
-export async function getUserWithRole(userId: string) {
+export async function getUserRole(userId: string) {
   const user = await prisma.user.findUnique({
     where: { id: userId },
   });

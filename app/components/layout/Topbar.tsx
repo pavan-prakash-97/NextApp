@@ -10,7 +10,6 @@ export default function Topbar() {
   const { user } = useUser();
   const router = useRouter();
 
-  console.log("TOPBAR USER", user);
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
